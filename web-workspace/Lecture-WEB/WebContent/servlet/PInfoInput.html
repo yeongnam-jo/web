@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/Lecture-WEB/PInfoResult" method = "post">
+		<h1>개인 정보 입력</h1>
+		이 름 : <input type="text" name="name"><br>
+		아 이 디 : <input type="text" name="id"><br>
+               패스워드 : <input type="password" name="pwd"><br><br>
+		성 별 : 남 <input type="radio" name = "sex" value ="m"> 여 <input type = "radio" name ="sex" value ="f"><br><br>
+		메일 수신 여부 : 공지 메일 <input type="checkbox" name = "mail" value ="noticeMail"> 
+					 광고 메일 <input type="checkbox" name = "mail" value ="adMail">
+					 배송 확인 메일 <input type="checkbox" name = "mail" value ="deliveryMail"><br><br>
+		직 업 : <select name = "job"><option>회사원</option><option>학생</option><option>기타</option></select><br><br>
+		<input type = "reset" value ="취소">		 
+		<input type="submit" value="확인">
+		
+	</form>
+</body>
+</html>

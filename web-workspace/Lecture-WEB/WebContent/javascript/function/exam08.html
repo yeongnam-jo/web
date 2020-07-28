@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+
+/* 	function func(i) {
+		return setTimeout(function(){
+			alert(i);
+		}, 0);
+	}
+	
+	for(var i = 0; i < 3; i++){
+		func(i);
+	}
+	 */
+	
+	for(var i = 0; i < 3; i++){
+		(function(i){
+			setTimeout(function() {
+				alert(i);
+			}, 0)
+			
+		})(i);
+		
+	}
+	
+
+	
+	/* // 아래의 실행 순서가 이상하다.
+	alert("첫번째...");
+	
+	setTimeout(function() { // 제어권이 다른 곳에 갔다.
+		alert('setTimeout');
+	}, 0)
+	
+	alert('두번쨰...') */
+	
+	
+	
+	/* // 실행 값이 이상하다? 왜 3만 세번 나오냐. 제어권 문제라는데..
+	for(var i = 0; i < 3; i++){
+		setTimeout(function() { 
+			// 자바스크립트의 모든 코드가 실행되고 난 뒤에 setTimeout이 실행된다고 한다.
+			// 즉, i가 3이 될 때까지 반복문이 돌고나서 alert가 실행되기 때문에 i가 3인 경우만 세번 싱행된다. 
+			// setTimeout 특이한놈이다. 사용 시 유의하자.
+			// setTimeout 부분을 클로저로 만들어 사용하면 이런 문제가 발생하지 않는다.
+			alert(i);
+		}, 0)
+		
+	} */
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

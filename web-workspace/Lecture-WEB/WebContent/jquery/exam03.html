@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src = "js/jquery-3.5.1.min.js"></script>
+<script>
+
+	$(document).ready(function() {
+		alert('ready')
+		// $('ul li').hide() // ===> 후손태그(자식 포함). 일반적으로 ul태그 밑에는 1레벨로 li가 바로 오기 때문에, ul li로 쓰나 ul > li로 쓰나 의마가 같다.
+		// $('ul > li').hide() ==> 자식태그 
+		
+		// $('ul li:first').hide().hide() ==> 축구
+		// $('ul li:last').hide().hide() ==> 국밥
+		
+		// $('ul li:first-child').hide() ==> 각 그룹 별 first : 축구, 떡볶이
+		$('ul li:last-child').hide() // ==> 각 그룹 별 last : 골프, 국밥
+		
+		
+	})
+	
+</script>
+</head>
+<body>
+	<h1>스포츠 종류</h1>
+	<ul>
+		<li>축구</li>
+		<li>농구</li>
+		<li>야구</li>
+		<li>골프</li>
+	</ul>
+	<h1>음식 종류</h1>
+	<ul>
+		<li>떡볶이</li>
+		<li>오뎅</li>
+		<li>순대</li>
+		<li>국밥</li>
+	</ul>
+
+</body>
+</html>

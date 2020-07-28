@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#numberlist li { /* 자식 중 li인 것 */
+		float : left; /* 마진을 안 주면 붙어버린다 */
+		margin : 0px 30px 0px 0px; /* top - bottom - left - right */
+		/* margin : 10px 10px; 2개를 적으면, left - right */
+		font-size : 16pt;
+		list-style : none;
+		
+	}
+	
+	li:first-child{
+		color : orange;
+	}
+	
+	li:last-child {
+		color : blue;
+	}
+	
+	li:nth-child(2n){
+		color:green;
+	}
+	
+	a {
+		margin: 20px;
+	}
+	
+	p { /* float 했을 때, claer 하지 않으면 계속해서 옆으로 붙는다 */
+		/*clear : left; clear 하면, 'float : left'에 대해 무효화 한다!  */
+		clear : both; /* clear 하면, 'float : left, right'에 대해 무효화 한다!  */
+	}
+	
+/* 	a[href]{
+		color : lime;
+	} */
+	
+	a:link{ /* 위와 똑같은 의미다 */
+		color : lime;
+		/* text-decoration: underline; */
+		text-decoration: none;
+	}
+	
+	a:visited { /* a 태그 중 방문기록이 있는 것. 설정 안하면 보라색으로 나타난다. */
+		color : lime;
+	}
+	
+	a:hover { /* 마우스 올렸을 때 */
+		background-color: lightgray;
+		text-decoration: underline;
+	}
+	
+	:root{ /* 모든 폰트에 대해 */
+		font-weight: bold;
+	}
+	
+	
+</style>
+
+</head>
+<body>
+	<ul id = "numberlist">
+		<li>ONE</li>
+		<li>TWO</li>
+		<li>THREE</li>
+		<li>FOUR</li>
+		<li>FIVE</li>
+		<li>SIX</li>
+		<li>SEVEN</li>
+		<li>EIGHT</li>
+		<li>NINE</li>
+		<li>TEN</li>
+	</ul>
+	
+	<p>
+		<a href="http://www.naver.com">NAVER</a>
+		<a href="http://www.daum.net">DAUM</a>
+	</p>
+
+
+</body>
+</html>

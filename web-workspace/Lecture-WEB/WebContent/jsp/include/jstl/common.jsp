@@ -1,0 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<%
+	String msg = "공통 선언입니다.";
+%>
+    
+	<!-- request.setAttribute("msg2", msg); -->

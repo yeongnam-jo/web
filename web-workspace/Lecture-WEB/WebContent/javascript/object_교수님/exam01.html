@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var person = {
+		name : '홍길동',
+		phone : '010-1111-2222',
+		'phone-home' : '02-1111-2222'
+	};
+	
+	document.write('속성 name 존재여부 : ' + ('name' in person) + '<br>')
+	document.write('속성 phone 존재여부 : ' + ('phone' in person) + '<br>')
+	document.write('속성 addr 존재여부 : ' + ('addr' in person) + '<br>')
+	
+	console.log(person)
+	person.addr = '경기도 광명시';
+	console.log(person)
+
+	document.write('속성 name 존재여부 : ' + ('name' in person) + '<br>')
+	document.write('속성 phone 존재여부 : ' + ('phone' in person) + '<br>')
+	document.write('속성 addr 존재여부 : ' + ('addr' in person) + '<br>')
+	
+	delete(person.addr)
+	
+	document.write('속성 name 존재여부 : ' + ('name' in person) + '<br>')
+	document.write('속성 phone 존재여부 : ' + ('phone' in person) + '<br>')
+	document.write('속성 addr 존재여부 : ' + ('addr' in person) + '<br>')
+	
+	/*
+	alert('name : ' + person['name']);
+	alert('phone : ' + person['phone']);
+	
+	alert('name : ' + person.name)
+	alert('phone : ' + person.phone)
+	*/
+//	alert(typeof person)
+//	alert(person)
+//	console.log(person)
+</script>
+</head>
+<body>
+
+</body>
+</html>

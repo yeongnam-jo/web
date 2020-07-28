@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- http:/localhost:9999/Lecture-WEB/method -->
+	
+	<a href = "/Lecture-WEB/method">요청 </a> <!-- /Lecture-WEB은 왜 써주는거야? -->
+	
+	<form action = "/Lecture-WEB/method" method = "get">
+		ID : <input type = "text" name = "id"> <!-- name이라는 속성을 써줘야 query문에 담겨 간다. method?id=2060340009 -->
+		<input type = "submit" value = "GET방식 호출">
+	</form>
+	
+	<form action = "/Lecture-WEB/method" method = "post">
+		ID : <input type = "text" name = "id">
+		<input type = "submit" value = "post 방식 호출">
+	</form>
+
+</body>
+</html>

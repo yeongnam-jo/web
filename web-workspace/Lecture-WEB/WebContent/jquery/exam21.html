@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+		border : 1px solid red;
+		padding : 10px;
+	}
+</style>
+<script src="/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		
+		$('button').click(function(){
+			
+			//태그를 삭제하는 방법
+			
+			// 방법(1) JS
+			/* var tags = document.getElementsByTagName('p')
+			for(let i = 0; i < tags.length; i++){
+				console.log(tags[i].parentNode.removeChild(tags[i]))
+			} */
+			
+			// 방법(2) jQuery : remove ==> 해당 태그를 지운다. + 후손도 다 지워짐
+			// $('div').remove()
+			
+			// 방법(3) jQuery : empty ==> 해당 태그의 후손을을 지운다. 자기 자신은 남는다.
+			// $('div').empty()
+			
+			
+			// p태그 중 클래스가 c01인 것들을 지운다.
+			// $('p.c01').remove() 
+			// $('p').remove('.c01') 위와 같은 뜻이다.
+			
+			// p태그 중 id가 id01인 것과, 클래스명이 c01인 것 지우기
+			//$('p#id01').remove()
+			//$('p.c01').remove()
+			$('p').remove('#id01, .c01') //싱글쿼테이션이 감싸는 것 주의
+			
+		})
+		
+	})
+</script>
+</head>
+<body>
+	<div>
+		<p id = 'id01'>나는 홍기리보이동입니다.</p>
+		<mark class = "c01">나는 윤기리보이</mark><br>
+		나는 고기리보이
+		<p class = "c01">나는 한기리보이동입니다.</p>
+		<p>나는 강기리보이</p>
+		
+	</div>
+	<p class = "c01">나는 박길동입니다.</p>
+	<button>삭제</button>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+	function func(a,b,c){
+		document.write(`${a} : ${b} : ${c}` + '<br>');
+	}
+	
+	var array = [1,2,3];
+	func(array); // 123, undefined, undefined
+	func(array[0], array[1], array[2]); // 배열 요소가 많으면 완전 노가다겠지? 편하게 써보자
+	func.apply(null, array); // apply 함수를 쓰면, 요소 하나하나를 날려준다. 지금은 null에 대해서는 무시하자. 부모에 대한 형태라고 함.
+	func(...array); // apply에서 업그레이드 된 것!
+	
+	
+	
+	function func01(){
+		document.write(arguments[0] + ' : ' + arguments[1] + ' : ' + arguments[2] + '<br>');
+	}
+	
+	func01(10, 20);
+	func01(10, 20, 30);
+	//func01(10, 20, 30) 세미콜론을 생략할 수 있다.
+	
+	function func02(){  // ...arguments 가 생략되어 있습니다. 
+		for(let i of arguments){
+			document.write(i + ' : ');
+		}
+		document.write('<br>');
+	}
+	
+	func02(10, 20);
+	func02(10, 20, 30);
+	
+	
+	function func03(...numbers) {
+		console.log(numbers);
+	}
+	func03(10, 20, 30);
+	
+	function func04(a, b, ...numbers) {
+		document.write('a : ' + a + '<br>');
+		document.write('b : ' + b + '<br>');
+		document.write('numbers : ' + numbers + '<br>');
+		
+	}
+	
+	var numArr = [1,2,3];
+	func04(...numArr); 
+	func04(...numArr, ...numArr);
+	// ...numArr : 인자로 넘길 땐 하나씩 뿌려진다.
+	// 즉, 1,2,3, 1,2,3이 매개변수로 넘어간다.
+	
+	// func04에서 인자로 받을 땐, a = 1, b = 2, ....number : 3, 1, 2, 3 이렇게 배열로 받아버린다.
+	
+	
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

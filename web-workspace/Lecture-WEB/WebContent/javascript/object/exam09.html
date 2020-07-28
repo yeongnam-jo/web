@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	// 무늬만 class 이다. 사실상 프로토타입을 사용하고 있는 것이다.
+	class Person {
+		// new 를 하는 순간 constructor가 호출된다.
+		// prototype에 있는 constructor를 재정의 하는 것이다.
+		constructor(name, phone, addr){
+			this._name = name; // 언더바의 개수는 여러개 일 수 있다
+			this._phone = phone;
+			this._addr = addr;
+		}
+		
+		//getter, setter 구현하기
+		get name(){ // Object에 __proto__에 들어가면 get __proto__ 가 있다. / 객체에 get __proto__ 선언한다.
+			return this._name;
+		}
+		
+		set name(name){ // Object에 __proto__에 들어가면 get __proto__ 가 있다. / 객체에 get __proto__ 선언한다.
+			this._name = name; 
+		}
+		
+		//person.name 하면 게터 실행됨 / get name() 안만들었으면, person._name 이라고 호출해야 한다.
+		//person.name = 하면 세터 실행됨 
+		// 이러한 게터와 세터를 통해서 변수를 지킬 수 있다.
+		// ._name 이라고 접근하면 되는데 무슨 보안? ==>.__name 등, 앞에 다른것을 더 붙여서 하면 되겠지! 파악하기 어려운걸로. 그게 된다고함.
+				
+		
+		
+		
+		info(){
+			alert(`name : ${this.name}\nphone : ${this.phone}\naddr: ${this.addr}`)
+		}
+			
+	}
+	
+
+	class Doctor extends Person{ //extends 했을 때 super는 예약어다.
+		constructor(name, phone, addr, major)
+		{
+			super(name, phone, addr);
+			this._major = major;
+			
+		}
+	
+		set major(major){ // 객체명.변수명 =  하면 세터 실행됨
+			this._major = major;
+		}
+		
+		get major(){ // 객체명.변수명 하면 게터 실행됨
+			return this._major;
+			
+		}
+		
+	}
+	
+	
+	
+	// proto에 보면 constructor(생성자)의 개념이 있다.
+	// 지난 시간까지 생성자 함수를 만들었는데, 그러지 않아도 된다.
+	let person = new Person('홍길동', '010-1111-2222', '서울시 종로구');
+	console.log(person);
+	person.info();
+	
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

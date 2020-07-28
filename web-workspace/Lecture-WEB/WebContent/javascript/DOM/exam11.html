@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#monitor {
+		text-align: right
+	}
+	
+	input[type='button'] {
+		padding: 0 20px;
+		margin: 0px 5px;
+	}
+</style>
+<script>
+
+ 	function clickData(data) {
+		console.log(data)
+		let monitor = document.getElementById("monitor")
+		if(data == 'clear') {
+			monitor.value = '';
+		} else if(data == '=') {
+			monitor.value = eval(monitor.value)	
+		} else {
+			monitor.value += data
+		}
+	} 
+ 	
+</script>
+</head>
+<body>
+	<input type="text" id="monitor"><br>
+	<input type="button" value="1" onclick="clickData(this)" >
+	<input type="button" value="2" onclick="clickData(this)" >
+	<input type="button" value="3" onclick="clickData(this)" >
+	<input type="button" value="4" onclick="clickData(this)" > <br>
+	<input type="button" value="+" onclick="clickData(this)" >
+	<input type="button" value="-" onclick="clickData(this)" >
+	<input type="button" value="=" onclick="clickData(this)"  >
+	<input type="button" value="clear" onclick="clickData('clear')">
+</body>
+</html>
+

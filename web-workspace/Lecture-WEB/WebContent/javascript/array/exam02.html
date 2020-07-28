@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	let names = ['가길동', '나길동', '다길동', '라길동', '마길동'];
+	//alert(names);
+	
+	document.write('<h3>방법1</h2>');
+	for(var i = 0; i <names.length; i++){
+		alert(names[i]); // 하나씩 창으로 뜬다.
+		document.write(names[i] + "<br>");
+		console.log(names[i]); // 개발자모드에서 console에 들어가면 나와있다. 개발자가 디버깅하기 위해 쓰는 것.
+	}
+	
+	document.write('<h3>방법2</h2>');
+	for(var i in names){ //원소를 꺼내는 게 아니라, 인덱스가 반환된다. 주의해야함!
+		document.write(i + '<br>');
+	}
+	
+	//1.5 for반복문 (foreach 반복문과 비슷한 형태)
+	document.write('<h3>방법3</h2>'); 
+	for(var item of names){
+		document.write(item + '<br>');
+	}
+	
+
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

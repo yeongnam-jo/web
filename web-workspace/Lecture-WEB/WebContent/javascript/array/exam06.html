@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var nums = [10, 20, 30, 40, 55]
+	
+	/*
+		0번째 변수 : 10
+		1번째 변수 : 20
+		2번째 변수 : 30
+		3번째 변수 : 40
+		4번째 변수 : 55
+	*/
+	document.write('<h2>첫번째 방식</h2>')
+	for(let i = 0; i < nums.length; i++) {
+		document.write(`${ i }번째 정수 : ${ nums[i] }<br>`)
+	}
+	
+	document.write('<h2>두번째 방식</h2>')
+	for(let idx in nums) {
+		document.write(`${ idx }번째 정수 : ${ nums[idx] }<br>`)
+	}
+	
+	document.write('<h2>세번째 방식</h2>')
+	nums.forEach(function(element, index, nums) { // nums 배열의 요소 개수만큼 매개변수부분에 선언된 함수를 돌려줘@@
+		
+		document.write(`${index}번째 정수 : ${element}<br>`)
+		// document.write(arguments.length); ==> arguments가 3개당.
+	})
+	
+	
+	// var copyNums = [...nums];
+	
+	var copyNums = [];
+	for(let i in nums){
+		copyNums[i] = nums[i];
+	}
+	
+	document.write('nums : ' + nums + '<br>');
+	document.write('copyNums : ' + copyNums + '<br>');
+	
+	
+	var copyNums2 = nums.map(function() {
+		return 'A' // nums 배열의 요소 개수만큼 'A'를 반환하여 합쳐진 배열을 만든다.
+	})
+	
+	document.write('copyNums2 : ' + copyNums2 + '<br>');
+	
+	var copyNums3 = nums.map(function(element) {
+		return element + 100
+	})
+	
+	document.write('copyNums3 : ' + copyNums3 + '<br>');
+	
+	let bool = nums.every(function(element, index, nums) { // every : 모든 것을 만족해야 true
+		return element % 10 == 0
+	})
+	
+	document.write('every() 결과 : ' + bool + '<br>')
+	
+	let bool2 = nums.some(function(element, index, nums) { // some : 하나라도 만족하면 true
+		return element % 10 != 0
+	})
+	
+	document.write('some() 결과 : ' + bool2 + '<br>');
+	
+	let s = 0;
+	for(let data of nums){
+		s += data
+	}
+	document.write('for of : ' + s + '<br>');
+	
+	let s2 = 0;
+	for(let data in nums){
+		s2 += data
+	}
+	document.write('for in : ' + s2 + '<br>');
+	
+	let sum = nums.reduce(function(before, element, index) { //reduce가 돌아가는 방식. 콘솔로 확인
+		return before + element; //연산 결과가 before로 된다. (최초에는 첫번쨰 원소겠지요. 두번쨰부터는 첫번째와 두번째 연산결과가 쓰이겠지요.)
+	})
+	
+	document.write('배열의 총합 : ' + sum + '<br>');
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

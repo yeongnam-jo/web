@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script> <!-- 마지막에 임포트한 jQuery url이 적용된다. 아래의 hide 함수도 이에 해당하는 함수가 호출된 것. -->
+
+<script>
+	$(document).ready(function() {
+		alert('ready')
+		//$('input:text').hide()
+		//$('input:button').hide()
+		//$(':button').hide()
+		//$('button').hide()
+		
+		$(':button').click(function() { //type 속성값이 button인 것들을 click 할 때, hr 태그를 숨겨주세요.
+			//$('hr').hide()
+			//$(this).hide() ==> 클릭한 버튼에 해당하는 것만 숨겨주세요.
+			$(this).hide("drop", {direction : "up"})
+			// jquery-ui.js에 해당하는 src를 저 위에 복사해둠.
+			// https://api.jqueryui.com/hide/
+		})
+	})
+</script>
+</head>
+<body>
+	<hr>
+	<input type="text">
+	<input type="button" value="버튼1">
+	<button>버튼2</button>
+	<hr>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

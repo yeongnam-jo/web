@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var array = [10, 20, 30, 40];
+	//var copyArray = array;	// 얕은복사(shallow copy)
+	
+	// 깊은복사(deep copy)
+	var copyArray = [];
+	for(let data of array) {
+		copyArray.push(data)
+	}
+	
+	
+	
+	document.write('array : ' + array + '<br>')
+	document.write('copyArray : ' + copyArray + '<br>')
+	document.write('<hr>')
+	
+	copyArray[2] = 1000;
+	
+	document.write('array : ' + array + '<br>')
+	document.write('copyArray : ' + copyArray + '<br>')
+	
+	// 깊은 복사를 편하게 하는 방법은 없을까요? => 전개 연산자를 쓰면 값을 하나씩 뿌려줄 수 있다!
+	var copyArray2 = [...array];
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

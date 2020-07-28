@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function showInfo(){
+		let list = '';
+		let hobbies = document.inputForm.hobby; <!-- 오로지 form 태그만 'document.name속성명' 으로 접근할 수 있음 -->
+		for(let i = 0; i < hobbies.length; i++){
+			if(hobbies[i].checked){
+				// console.log(document.inputForm.hobby[i]);
+				list += hobbies[i].value + '\n';
+				
+			}
+		}
+		alert(list)
+	}
+	
+	function selectAll(){
+		let list = '';
+		let hobbies = document.inputForm.hobby;
+		for(let i = 0; i < hobbies.length; i++){
+			hobbies[i].checked = true;
+		}
+		
+	}
+	
+	function deSelectAll(){
+		let list = '';
+		let hobbies = document.inputForm.hobby;
+		for(let i = 0; i < hobbies.length; i++){
+			hobbies[i].checked = false;
+		}
+	}
+	
+	function toggle(check) {
+		
+		for(let i in document.inputForm.hobby) {
+			document.inputForm.hobby[i].checked = check
+		}
+	}
+	
+	function toggle(){ // toggle 함수 재선언되었음. 위의 toggle(check) 함수를 쓸 수 없다. 자바스크립트는 오버라이딩 지원 안됨.
+		let hobbies = document.inputForm.hobby;
+	
+		// 모두 선택된 상태
+		// 하나도 선택되지 않은 상태
+		// 일부만 선택된 상태
+		
+		// alert(hobbies.length) 
+		// alert(hobbies.length == 4) 
+		
+		
+		// for 반복문 쓸 때, in으로 돌리면 잘못 나오는 경우가 있다고 한다. 아래 주석처리한 부분은 한번만 제대로 실행되고, 반복 실행 시 적용이 안됨.
+		// 따라서 for 반복문을 쓸 때는 length 개수만큼 돌리는 로직을 쓰자
+		
+ 		let count = 0;
+		for(let i = 0; i < hobbies.length; i++){
+			if(hobbies[i].checked){
+				count++;
+			}
+		}
+		
+		if(count == hobbies.length){ // 모두 선택된 상태
+			for(let i = 0; i < hobbies.length; i++){
+				hobbies[i].checked = false;
+			}
+
+		} else if(count == 0){ // 하나도 선택되지 않은 상태
+			for(let i = 0; i < hobbies.length; i++){
+				hobbies[i].checked = true;
+			}
+			
+		} else if(count > 0 && count < hobbies.length){ // 일부만 선택된 상태
+			for(let i = 0; i < hobbies.length; i++){
+				hobbies[i].checked = true;
+			}
+			
+		} 
+		
+/* 		let count = 0;
+		for(let i in hobbies){
+			if(hobbies[i].checked){
+				count++;
+			}
+		}
+		
+		if(count == hobbies.length){ // 모두 선택된 상태
+			for(let i in hobbies){
+				hobbies[i].checked = false;
+			}
+
+		} else if(count == 0){ // 하나도 선택되지 않은 상태
+			for(let i in hobbies){
+				hobbies[i].checked = true;
+			}
+			
+		} else if(count > 0 && count < hobbies.length){ // 일부만 선택된 상태
+			for(let i in hobbies){
+				hobbies[i].checked = true;
+			}
+			
+		} */
+		
+		
+		/* 교수님 로직
+		
+		let hobbys = document.inputForm.hobby
+		let check = false
+		for(let i = 0; i < hobbys.length; i++) {
+			if(!hobbys[i].checked) {
+				check = true
+				break;
+			}
+		}	
+		
+		for(let i = 0; i < hobbys.length; i++) {
+			hobbys[i].checked = check
+		}
+		
+		*/
+		
+		
+	}
+	
+	
+	
+</script>
+</head>
+<body>
+	<form action = "" name = "inputForm"> <!-- 오로지 form 태그만 'document.name속성명' 으로 접근할 수 있음 -->
+		당신의 취미는?<br>  
+		<input type = "checkbox" name = "hobby" value = "movie">음악감상<br> <!-- name : 한 그룹임을 나타내는 속성 -->
+		<input type = "checkbox" name = "hobby" value = "music">영화감상<br> <!-- value 속성값이 한글이면 어떤 웹브라우저에서는 제대로 해석하지 못할 수도 있음 -->
+		<input type = "checkbox" name = "hobby" value = "climb">등산<br> 
+		<input type = "checkbox" name = "hobby" value = "game">게임<br> 
+		<!-- <input type = "button" value = "전체선택" onclick = "selectAll()"><br> 
+		<input type = "button" value = "전체취소" onclick = "deSelectAll()"><br>  -->
+		
+		<!-- <input type="button" value="전체선택" onclick="toggle(true)">
+		<input type="button" value="전체취소" onclick="toggle(false)"> -->
+		
+		<input type = "button" value = "전체선택/해제" onclick = "toggle()"><br>	
+		<input type = "button" value = "결과보기" onclick = "showInfo()"> <!-- 인라인 이벤트 모델 -->
+	</form>
+
+</body>
+</html>

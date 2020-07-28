@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	h1:first-child { /* 주의 : first child 중에서 h1인 것 */
+		color:red;
+	}
+	
+	h1:first-of-type { /* child 중에서 처음 나오는 h1 */
+		color : green;
+	}
+	
+	h2:last-of-type {
+		color : orange;
+	}
+	p::first-line{
+		text-decoration: underline;
+	}
+	p::first-letter {
+		font-size : 4em; /* 대문자M을 기준으로 4배 */
+	}
+	
+	p::selection {
+		background-color: yellow;
+	}
+	
+	p::selection{background-color:yellow;} 
+	
+	
+</style>
+
+</head>
+<body>
+	<p>
+		ABCE<br>
+		EFGH
+	</p>
+	
+	<p>
+		abcd<br>
+		efgh
+	</p>
+
+
+	<h1>Header-1</h1> <!-- 얘가 first-child 이다. -->
+	<h2>Header-2</h2>
+	<h3>Header-3</h3>
+	<h4>Header-4</h4>
+	<h1>Header-1</h1>
+	<h2>Header-2</h2>
+	<h6>Header-6</h6>
+	<div>
+		<h2>Sub-2</h2> <!-- 얘가 first-child 이다. -->
+		<h1>Sub-1</h1>
+	</div>
+</body>
+</html>

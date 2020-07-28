@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function() {
+		 var tags = document.getElementsByTagName('td')
+		 console.log(tags)
+		 tags[0].innerHTML = '아이디'
+		 
+		 // let nodes = document.querySelector('td')
+		 // 왜 td 태그 중 첫번째 요소만 나오냐? 그게 특징이야.
+		 let nodes = document.querySelectorAll('td')
+		 console.log(nodes)
+		 nodes[1].innerText = '패스워드'
+	}
+</script>
+</head>
+<body>
+	<table border="1" style="width:100px; height: 100px">
+		<tr>
+			<td>ID</td>
+		</tr>
+		<tr>
+			<td>PASSWORD</td>
+		</tr>
+	</table>
+</body>
+</html>

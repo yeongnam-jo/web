@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/* 	function returnFunc(name){
+		var msg = "반갑습니다." + name + "님!!!";
+		
+		return msg;
+	}
+	
+	// 아래와 같이 쓰려면, 변수의 지역성이 문제가 된다. 함수가 끝나면 msg 변수는 사라진다.
+	alert(msg);
+	
+	// 어떻게 하면 alert(msg)를 사용할 수 있을까?
+			
+	
+	// 방법(1) return 값으로 msg를 보낸다. 그리고 alert 함수에 담는다.
+	var msg = returnFunc('홍길동');
+	alert(msg);
+	 */
+	 
+	 // 방법(2) 클로저(return에 위치한 함수) 활용
+	function returnFunc(name){
+		var msg = "반갑습니다." + name + "님!!!";
+		
+		return function(){ 
+			alert(msg);
+		};
+	}
+	 
+	/* returnFunc('최길동');
+	alert(msg) // 오류 발생 */
+	
+	// 아래의 형태에 익숙해지자. 함수를 리턴값으로 받으면 지역변수가 계속 살게된다. 생각과는 다르다.
+	var f = returnFunc('조길동');
+	f();
+	f();
+	
+	// 더 많이 쓰이는 형태라고 한다. 그런데 이렇게 1회성으로 사용할거면 왜 이런 형태를 쓰는가?
+	// 매개변수의 값을 좀 더 유연하게 활용할 수 있기 때문이다. wow!
+	// 바로 위의 f(); 형태는 name이 '조길동'인 msg만 활용할 수 있다.
+	returnFunc('홍길동')(); 
+	returnFunc('박길동')(); 
+	returnFunc('임길동')(); 
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

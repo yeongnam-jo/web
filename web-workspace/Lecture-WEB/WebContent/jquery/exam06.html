@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src = "js/jquery-3.5.1.min.js"> </script>
+<script>
+	$(document).ready(function(){
+		alert('ready')
+		//$('tr')[0].style.backgroundColor = 'gray' ==> JS 문법인듯
+		//$('tr').css('background-color', 'yellow') ==> jQuery 문법인듯
+		$('tr:even').css('background-color', 'green') // 짝수 row에만 적용
+		$('tr:odd').css('background-color', 'pink') // 홀수 row에만 적용
+	})
+</script>
+</head>
+	<h2>회원명부</h2>
+	<table border = "1">
+		<tr>
+			<th>이름</th>
+			<th>전화번호</th>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-1111-2222</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-1111-2222</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-1111-2222</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-1111-2222</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-1111-2222</td>
+		</tr>
+	</table>
+<body>
+</body>
+</html>

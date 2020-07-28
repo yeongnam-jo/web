@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	var p = {
+	'name' : '홍길동',
+	'phone' : '010-1111-2222',
+	'addr' : '경기도 광명시'
+	}
+	
+	console.log(p)
+	
+	var person = {
+		'name' : '홍길동',
+		'phone' : '010-1111-2222',
+		'addr' : '경기도 광명시',
+		'info' : function() {
+			/*
+			alert('name : ' + this.name + '\n'
+				+ 'phone : ' + this.phone + '\n'
+				+ 'addr : ' + this.addr + '\n')
+			*/
+			
+			/*
+			let msg = ''
+			with(this) {
+				msg += 'name : ' + name + '\n';
+				msg += 'phone : ' + phone + '\n';
+				msg += 'addr : ' + addr + '\n'
+			}
+			alert(msg)
+			*/
+			for(var key in this) {
+				
+				//if(key != 'info')
+				if((typeof this[key]) != 'function')
+					document.write(key + ' : ' + this[key] + '<br>')
+			}
+		}
+	}
+	
+	person.toString = function() {
+		let msg = '';
+		for(let key in this) {
+			if((typeof this[key] != 'function'))
+				msg += `${ key } : ${ this[key] }<br>`
+		}
+		return msg
+	}
+	
+	document.write(person.toString())
+	document.write(p.toString())
+	document.write('<hr>')
+	document.write(person)
+	document.write('<hr>')
+	
+	with(person) {
+		info();
+	}
+
+	person.info()
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

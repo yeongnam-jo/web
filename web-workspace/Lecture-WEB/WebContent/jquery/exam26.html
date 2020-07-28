@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	img{
+		width : 250px;
+		height : 200px;
+	}
+</style>
+<style>
+	img {
+		width: 150px;
+		height: 120px;
+		/* margin-right : -10px; */
+		float : left; /* 이미지를 margin 없이 바짝 붙인다 */
+	}
+	
+	button{
+		float : left;
+		height : 120px;
+	}
+	
+</style>
+<script src="/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+		//next 버튼 구현
+		$('#nextBtn').click(function(){
+			$('img').last().prependTo('span')
+			
+		})
+		
+		//prev 버튼 구현
+		$('#prevBtn').click(function(){
+			$('img').first().appendTo('span')
+		})
+		
+		//자동으로 next 하기 
+		setInterval(function() {
+			$('#nextBtn').trigger('click')
+		}, 1000)
+	})
+</script>
+</head>
+<body>
+	<button id="prevBtn">PREV</button>
+	<span>
+	<img src="/Lecture-WEB/html/images/추노1.jpg">
+	<img src="/Lecture-WEB/html/images/추노2.jpg">
+	<img src="/Lecture-WEB/html/images/추노3.png">
+	<img src="/Lecture-WEB/html/images/추노4.png">
+	</span>
+	<button id="nextBtn">NEXT</button>
+</body>
+</html>

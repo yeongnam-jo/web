@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 
+		HTML5 버전의 화면 구성
+		
+		header(머리) 		: 사이트명, 로고 포함
+		nav				: 사이트의 메뉴 포함
+		section(가슴)		: 문서의 내용
+		article			: 문서의 내용이 많은 경우 세부적으로 구분
+		aside			: 문서의 주내용을 제외한 나머지 영역에 배치
+		footer(발)		: 사이트의 정보(주소, 전화번호), 저작권, 부가정보 
+	
+	 -->
+	 
+	 <header>
+	 	<h1>광명융합기술교육원 학과정보</h1>
+		<details> <!-- 아래의 ul 목록들을 접는 기능이다. -->
+			<summary>학과사이트이동</summary> 
+			<nav>
+				<ol>
+					<li><a href="#data">데이터분석과</a></li>
+					<!-- #: 같은 문서 내 이동할 때 사용 -->
+				 	<li><a href="#bio">바이오융합과</a></li>
+					<!-- #을 쓰지 않고 참조 주소를 적어주면, 그 사이트로 이동함 -->
+					<li><a href="#energy">전기에너지시스템과</a></li>
+					<li><a href="#vr">증강현실시스템과</a></li>
+					<li><a href ="#nami">나미학과</a></li>
+				</ol>
+			</nav>
+		</details>
+	</header>
+	 <section>
+	 	<article style = "height: 300px" id="data">
+	 		<h3>데이터분석과</h3>
+	 		<p>
+	 			안녕하세요 <strong>데이터분석과</strong>입니다. <!-- strong : 볼드 기능을 하는 태그 -->
+	 		</p>
+	 	</article>
+	 	<article style = "height: 300px" id="bio">
+	 		<h3>바이오융합과</h3>
+	 		<p>
+	 			<strong>안녕</strong>하세요 <mark>바이오융합과</mark>입니다. <!-- mark : 형광펜 기능을 하는 태그.  -->
+	 			궁금하신 사항이 있나요? 그럼 <mark style ="background-color: orange">010-5555-5555</mark>로  연락주세요. 
+	 		</p>
+	 	</article>
+	 	<article style = "height: 300px" id="energy">
+	 		<h3>전기에너지시스템과</h3>
+	 		<p>
+	 			안녕하세요 전기에너지시스템과입니다.
+	 		</p>
+	 	</article>
+	 	<article style = "height: 300px" id="vr">
+	 		<h3>증강현실시스템과</h3>
+	 		<p>
+	 			안녕하세요 증강현실시스템과입니다.
+	 		</p>
+	 	</article>
+	 	<article id = "nami">
+	 		<h3>나미학과</h3>
+	 		<p>
+	 			안녕하세요. 나미학과입니다.
+	 		</p>
+	 	</article>
+	 </section>
+	 
+	 <footer>
+	 	<address>주소: 경기도 광명시 오리로 904  전화번호 : 02-2618-2306</address>
+	 	<address>거제도 짱짱</address>
+	 </footer>
+
+</body>
+</html>

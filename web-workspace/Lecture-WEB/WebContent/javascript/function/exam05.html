@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+/*
+ 	자바스크립트 내장함수
+ 	1. 타이머
+ 		setTimeout(함수, ms) 	: setTimeout 함수는 콜백함수 형태로 쓰인다. 왜? 사용자마다 활용하고자 하는 함수(매개변수로 오는)함수가 다르기 때문
+ 		setInterval(함수, ms)	: 주기적으로 활용하는 타이머인듯?
+ 		clearInterval(id)
+ 		clearTimeout(id)
+ 		
+ 	2. 코드 실행 함수
+ 		eval(str)
+ 		
+ 	3. 숫자변환함수
+ 		parseInt(str)
+ 		parseFloat(str)
+ 		
+ */
+ 	var func = function() {
+ 			alert('3초가 지났습니다.');
+ 		}
+ 		 		
+ 	setTimeout(func, 3000);
+ 	// 위와 같이, 함수를 먼저 정의하고 그것을 매개변수로 쓰는 형태로 잘 쓰지 않는다.
+ 	
+ 	// 매개변수의 위치에 바로 함수를 정의해서 쓰는 형태를 더 많이 쓴다.
+ 	setTimeout(function(){
+ 		alert('3초가 지났습니다.');
+ 	}, 3000);
+ 	
+ 	
+ 	var id = setInterval(function(){
+ 		document.write('현재 시간 : ' + new Date() + '<br>');
+ 	}, 1000); // 1초마다 주기적으로 함수를 호출하지요.
+ 	
+ 	
+
+ 	setTimeout(function(){
+ 		alert('날짜 쓰기 종료...');
+ 		clearInterval(id);
+ 	}, 10000); // 10초 후에 id라는 타이머 함수를 멈춘다.
+ 
+ 		
+ 
+</script>
+</head>
+<body>
+
+</body>
+</html>

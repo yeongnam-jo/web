@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	/* Object 생성
+	'속성명' = '속성값'의 형태로 써야한다. 이때, 속성명의 싱글쿼테이션은 생략 가능하다. 
+	하지만, 속성명에 특수문자가 있으면 반드시 싱클쿼테이션으로 감싸야한다. */
+	
+	var person = { // 내부에 표현된 형태가 json(JavaScript Object Notation)
+	
+		name : '홍길동',
+		phone : '010-1111-2222',
+		'phone-home' : '010-2222-3333' // 속성명에 특수문자가 있으면 반드시 싱클쿼테이션으로 감싸야한다.
+	};
+	
+	alert('typeof : ' + typeof person);
+	alert('person : ' + person); 
+	console.log(person); 
+	
+	/* 내부의 데이터를 보고싶으면, console log를 봐야한다!
+	콘솔로그에서만 객체가 가지고 있는 모든 값을 볼 수 있다. */
+	
+	alert('name : ' + person.name);
+	alert('phone : ' + person.phone);
+	
+	alert('name : ' + person['name']);
+	alert('phone : ' + person['phone']);
+	
+	document.write('속성 name 존재 여부 : ' + ('name' in person) + '<br>');
+	document.write('속성 phone 존재 여부 : ' + ('phone' in person) + '<br>');
+	document.write('속성 address 존재 여부 : ' + ('address' in person) + '<br>');
+	
+	person.address = '경기도 광명시';
+	document.write('속성 address 존재 여부 : ' + ('address' in person) + '<br>');
+	delete(person.address);
+	document.write('속성 address 존재 여부 : ' + ('address' in person) + '<br>');
+
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

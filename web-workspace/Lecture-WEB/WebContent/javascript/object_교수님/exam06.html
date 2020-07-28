@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function Person(name, phone, addr) {
+		this.name = name;
+		this.phone = phone;
+		this.addr = addr;
+		
+		this.info = function() {
+			var msg = '';
+			for(let key in this) {
+				if((typeof this[key] != 'function'))
+					msg += key + ' : ' + this[key] + '<br>'
+			}
+			document.write(msg)
+		}
+	}
+	
+	var p = new Person('홍길동', '010-1111-2222', '서울시 서초구')
+//	console.log(p)
+	p.info()
+	
+	var p2 = new Person();
+	p2.info();
+	
+	Person.prototype.aaa = function() {
+		alert('aaa')
+	}
+	
+	//console.log(p)
+	p.aaa();
+	p2.aaa();
+	
+	document.write('p instanceof Person : ' + (p instanceof Person) + '<br>')
+	document.write('p instanceof Object : ' + (p instanceof Object) + '<br>')
+	
+	Person.prototype.aaa = function() {
+		alert('change...');
+	}
+	
+	p.aaa();
+	p2.aaa();
+	
+	p.aaa = function() {
+		alert('p에서 정의한 aaa()')
+	}
+	
+	p.aaa();
+	p2.aaa();
+</script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

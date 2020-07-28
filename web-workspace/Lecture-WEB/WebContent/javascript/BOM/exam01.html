@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	/*
+		브라우저 객체 모델(BOM)
+		- window(최상위 객체)
+			- location 객체
+			- navigator 객체
+			- history 객체
+			- screen 객체
+			- document 객체
+	*/
+	
+	
+/* 	a = 10;
+	//alert(a);
+	window.alert(a);
+	let sub = open("", "", "width = 320, height = 200") // 팝업 생성
+	
+	// open : 팝업 차단이면 null 결과를 반한다. null은 false와 같은 의미이므로 아래와같이 쓸 수 있다.
+	if(!sub){
+		alert('팝업창 옵션을 확인하세요')
+	}
+	
+	sub.moveTo(100, 100);
+	
+	setInterval(function() {
+		sub.moveBy(20,20)
+	}, 1000) */
+	
+	
+	let sub2 = open("", "", "width = 500, height = 600");
+	
+	setInterval(function() {
+		sub2.moveBy(100, 100)
+	}, 1000)
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	for (var i = 1; i <= 1; i++) {
+		var one = 10;
+		let two = 20;
+		const three = 30;
+	}
+
+	alert('var 타입의 one 나올까요?')
+	alert(one); // 나옵니다. 호이스팅 되기 때문입니다. 즉, 지역변수로 선언해도 전역변수로 쓰일 수 있지요.
+	alert('let 타입의 two 나올까요?')
+	alert(two); // 안나옵니다. 여기서 undefined 에러가 발생해서, 아래 문장들이 실행되지 않습니다.
+	alert('const 타입의 three 나올까요?')
+	alert(three); // 안나옵니다.
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

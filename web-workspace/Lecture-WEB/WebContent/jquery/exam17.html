@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+		
+		/*
+		let pTag = document.getElementsByTagName('p')
+		let html = pTag[0].innerHTML
+		let text = pTag[0].innerText
+		alert('추출된 html : ' + html)
+		alert('추출된 text : ' + text)
+		*/
+		
+		// jQuery 객체로 어떻게 접근하는가? (html과 text의 차이점)
+		let html = $('p').html() // 여러개의 p 태그 중 첫번 째 html
+		// 그럼 p태그 인덱싱을 어떻게 할까?
+		html = $('p').eq(1).html() 
+				
+		let text = $('p').text() // 모든 p태그에 대한 text 내용
+		text = $('p').eq(1).text() // 2번째 p태그의 text
+		alert('추출된 html : ' + html)
+		alert('추출된 text : ' + text)
+		
+		
+		/* let aTag = document.querySelector('a')
+		//let attr = aTag.href
+		let attr = aTag.getAttribute('href') // 위와 같은 의미
+		alert('추출된 attr : '  + attr) */ 
+
+		// jQuery 문법 : 속성값 뽑기
+		let attr = $('a').eq(1).attr('href')
+		alert('추출된 attr : '  + attr) 
+		
+		$('button').click(function(){
+			// JS 문법으로 input 태그의 value의 속성값 뽑아내기
+			/* let inputTag = document.getElementById("name")
+			let name = inputTag.value
+			alert('입력된 이름 : ' + name) */
+			
+			// jQuery 문법 : value의 속성값을 보는 방법
+			let name = $('#name').val() // getter, setter
+			alert('입력된 이름 : ' + name)
+			
+		})
+		
+	})
+</script>
+</head>
+<body>
+	<p>내이름은 <b>홍길동</b>이고, 별명은 <i>의적</i>입니다</p>
+	<p>내이름은 <strong>홍길순</strong>이고, 별명은 <em>의적2</em>입니다</p>
+	<a href = "http://www.naver.com">네이버</a><br>
+	<a href = "http://www.daum.net">다음</a><br>
+	이름 : <input type = "text" id = "name">
+	<button>입력안료</button>
+</body>
+</html>

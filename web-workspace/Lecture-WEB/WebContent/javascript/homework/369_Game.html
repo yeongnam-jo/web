@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//369 게임 작성
+	let num = prompt('10 - 100 사이의 숫자를 입력 ');
+	let bbo = 1;
+
+	for (var i = 1; i <= num; i++) {
+
+		if (i < 10) { // 10 미만
+			if (i % 3 == 0) {
+				document.write('짝<br>');
+			} else {
+
+				document.write(i + '<br>');
+			}
+
+		} else { // 10 이상
+			var tens = false;
+			var units = false;
+			var ten_multiple = false;
+
+			var tens_num = Math.floor(i / 10);
+			var units_num = i % 10;
+
+			if (tens_num % 3 == 0) {
+				tens = true;
+			}
+
+			if (units_num % 3 == 0) {
+				units = true;
+			}
+
+			if (i % 10 == 0) {
+				ten_multiple = true;
+			}
+			
+			if (tens && units && !ten_multiple) { // 10자리, 1자리 수가 모두 3의 배수 => 짝짝   33, 36
+				document.write('짝짝<br>');
+			} 
+			
+			if(tens && ten_multiple) { // 10자리수가 3의 배수 && 10의 배수 => 짝뽀숑   30 60  짝뽀뽀뽀숑
+				document.write('짝');
+				for (var j = 1; j <= bbo; j++) {
+					document.write('뽀');
+				}
+				document.write('숑<br>');
+				bbo++;
+			}
+
+			if (!tens && ten_multiple) { // 10자리수가 3의 배수가 아니고 && 10의 배수 =>  10 20 40 => 뽀숑 뽀뽀숑
+				for (var j = 1; j <= bbo; j++) {
+					document.write('뽀');
+				}
+				document.write('숑<br>');
+				bbo++;
+			} 
+			
+			if (!tens && !ten_multiple && units) { // (10자리수가 3의 배수가 아니고 && 10의 배수가아니고 &&) 1의 자리수가 3의 배수  => 13 16 23
+				document.write('짝<br>');
+			} 
+			
+			if (tens && !units && !ten_multiple) { // 10의 자리수만 3의 배수 31 32 짝
+				document.write('짝<br>');
+			}  
+			
+			if(!tens && !units && !ten_multiple) { // 그외 모두는 i
+				document.write(i + '<br>');
+			}
+		}
+	}
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src = "https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.0.min.js"></script>
+<script>
+	$(document).ready(function() {
+
+		$('.c01').dblclick(function() {
+			
+			$(this).css('backgroundColor', 'gray')
+			if(this.id == "i03"){
+				$(this).css('backgroundColor', 'yellow')
+				alert("정답입니다.")
+				
+			} else{
+				alert("틀렸습니다.")
+			}
+			
+			
+		})
+		
+		$('#re').click(function() {
+			$('.c01').css('backgroundColor', 'white')
+			
+		})
+		
+		$('#ans').click(function() {
+			$('#i03').css('backgroundColor', 'yellow')
+			
+		})
+	})
+</script>
+</head>
+<body>
+	<div>
+		<div class = "c01" id ="i01">1. public static void main(String args){}</div>
+		<div class = "c01" id ="i02">2. public static int main(String[] args){}</div>
+		<div class = "c01" id ="i03">3. public static void main(String[] args){}</div>
+		<div class = "c01" id ="i04">4. public static void Main(String[] args){}</div>
+		<input id = "re" type="button" value ="다시선택">
+		<input id = "ans" type="button" value ="정답보기"><br>
+	</div>
+</body>
+</html>

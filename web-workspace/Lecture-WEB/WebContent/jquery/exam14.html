@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#menu{
+		heigth : 50px;
+		background-color:green;
+	}
+	
+	#subMenu{
+		height : 100px;
+		background-color : yellow;
+		display : none;
+	}
+	
+</style>
+<script src = "js/jquery-3.5.1.min.js"> </script>
+<script>
+
+	$(document).ready(function(){
+
+		$('#menu').hover(function(){
+			//$('#subMenu').slideDown(1000)
+			$('#subMenu').slideToggle(1000)
+		}, function(){
+			//$('#subMenu').slideUp(1000)
+			$('#subMenu').slideToggle(1000)
+		})
+	})
+	
+</script>
+</head>
+<body>
+	<div id = "menu">마우스를 접근시켜보세요</div>
+	<div id = "subMenu">메뉴화면입니다</div>
+</body>
+</html>

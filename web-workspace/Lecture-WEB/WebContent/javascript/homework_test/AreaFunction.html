@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	function Area(width, height, radius) {
+		this._width = width;
+		this._height = height;
+		this._radius = radius;
+	}
+	
+	Area.prototype.area = function(){
+		return alert("넓이는 " + (this._width * this._height) + "입니다.")
+	}
+	
+	function Rectangle(width, height) { 
+		
+		Area.call(this, width, height)
+		
+	}
+	
+	Rectangle.prototype.area = function(){
+		return alert("넓이는 " + (this._width * this._height) + "입니다.")
+	}
+	
+	function Square(){ 
+		Rectangle.call(this, width)
+		
+	}
+	
+	Square.prototype.area = function(){
+		return alert("넓이는 " + (this._width * this._width) + "입니다.")
+	}
+	
+	function Triangle() { 
+		Area.call(this, width, height)
+	}
+	
+	Triangle.prototype.area = function(){
+		return alert("넓이는 " + (this._width * this._height * 0.5) + "입니다.")
+	}
+	
+	
+	
+	function Circle(){
+		Area.call(this, radius)
+		
+	}
+	
+	Circle.prototype.area = function(){
+		return alert("넓이는 " + (3.141592 * this._width * this._width) + "입니다.")
+	}
+
+	
+	var num = parseInt(prompt("도형을 선택하세요 1: 직사각형, 2: 정사각형, 3: 삼각형, 4: 원"));
+	switch(num){
+	case 1 :
+		var width = parseFloat(prompt("가로 길이"));
+		var height = prompt("세로 길이");
+		let recArea = new Rectangle(width, height);
+		recArea.area();
+		break;
+	case 2 :
+		var width = parseFloat(prompt("길이"));
+		let squArea = new Square(width);
+		squArea.area();
+		break;
+	case 3 : 
+		var width = parseFloat(prompt("밑변"));
+		var height = parseFloat(prompt("높이"));
+		let triArea = new Triangle(width, height);
+		triArea.area();
+		break;
+	case 4 :
+		var radius = parseFloat(prompt("반지름"));
+		let cirArea = new Circle(radius);
+		cirArea.area();
+		break;
+		
+	}
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+
+	.in{
+		border : 1px solid;
+		/* top : 50%;
+		left : 50%; */
+		width : 100px;
+		height : 100px;
+		float : left;
+		text-align: center;
+		line-height: 100px;
+	}
+	
+</style>
+<script src="/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
+<script>
+
+	$(document).ready(function() {
+		
+		$('#s01').css('background-color', 'red')
+		$('#s02').css('background-color', 'orange')
+		$('#s03').css('background-color', 'yellow')
+		$('#s04').css('background-color', 'green')
+		$('#s05').css('background-color', 'blue')
+		$('#s06').css('background-color', 'navy')
+		$('#s07').css('background-color', 'purple')
+		
+		
+		$('div.in').mouseenter(function(){
+			$(this).animate({
+				'height' : '200px',
+				'width' : '200px'
+			})
+			
+			let text = $(this).text()
+			text += "요일"
+			
+			$(this).text(text)
+			
+			
+		})
+			
+	
+		$('div.in').mouseleave(function(){
+			$(this).animate({
+				'height' : '100px',
+				'width' : '100px'
+			})
+			
+			
+			let text = $(this).text()
+			
+			text = text.substring(0, 1)
+			$(this).text(text)
+			
+			
+		}) 
+	
+	
+	})
+	
+</script>
+</head>
+<body>
+	<div>
+		<div class = "in" id = "s01">월</div>
+		<div class = "in" id = "s02">화</div>
+		<div class = "in" id = "s03">수</div>
+		<div class = "in" id = "s04">목</div>
+		<div class = "in" id = "s05">금</div>
+		<div class = "in" id = "s06">토</div>
+		<div class = "in" id = "s07">일</div>
+	</div>
+</body>
+</html>

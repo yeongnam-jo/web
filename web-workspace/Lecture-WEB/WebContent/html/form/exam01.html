@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 
+	
+		<form>
+			<input type =""> --- 단일 태그라서, </input> 필요 없다.
+			
+				type		text(한줄입력)
+							password(암호처리) --- 가입할 때 비밀번호 * 처리되는 것
+							checkbox(다중선택)  --- 가입할 때 여러개 선택하는 것
+							radio(단일선택) --- 남자냐 여자냐
+							button(사용자정의이벤트) 
+							file(첨부파일) --- 가입할 때 첨부파일 찾아보기
+							reset(초기화)
+							hidden(입력받지 않은 데이터 전송) 
+							submit(입력받은 모든 데이터를 전송) --- form태그 전체의 내용을 전송한다.
+				
+			<textarea>		여러 줄 입력
+			</textarea>		
+		</form>		
+	
+	 -->
+	 
+
+	 
+	 
+	 <form action = "http://www.naver.com">
+		<fieldset>
+			<lable>아이디 : <input type="text" size="30"></lable>
+			<br> <label for="pwd">암호 : </label><input type="password"
+				id="pwd"><br>
+			<br>
+		</fieldset>
+
+
+		<fieldset>
+		
+		<legend>희망연봉</legend><br>
+	 	<input type ="radio" name ="salary"> 2500~2800<br/>
+	 	<input type ="radio" name ="salary"> 2800~3000<br/>
+	 	<input type ="radio" name ="salary"> 3000~3200<br/>
+	 	<input type ="radio" name ="salary2"> 3200~3400<br/>
+	 	<input type ="radio" name ="salary2"> 3400~4000<br/>
+	 	<input type ="radio" name ="salary2"> 4000 이상<br/>
+		
+		</fieldset>
+	 	
+	 	
+	 	<strong>사용언어(중복선택가능)</strong><br>
+	 	<input type="checkbox" name="lang">JAVA<br>
+	 	<input type="checkbox" name="lang">C<br>
+	 	<input type="checkbox" name="lang">C++<br>
+	 	<input type="checkbox" name="lang">Python<br>
+	 	<input type="checkbox" name="lang">HTML<br>
+	 	<input type="checkbox" name="lang">Javascript<br>
+	 	
+	 	
+	 	<strong>취미(중복선택가능)</strong><br>
+	 	<input type="checkbox" name="hobby">개발<br>
+	 	<input type="checkbox" name="hobby">디버깅<br>
+	 	<input type="checkbox" name="hobby">테스트<br>
+	 	
+	 	<strong>자기소개</strong><br>
+	 	<textarea rows="5" cols ="50"></textarea><br>
+	 	
+	 	<strong>첨부파일</strong><br>
+	 	<input type="file" size="100"><br><br>
+	 	
+	 	
+	 	<input type="submit" value ="전송">
+	 </form>
+	 <br>
+	 <br>
+	 <br>
+	 <br>
+	 <br>
+	 <br>
+	 <br>
+	 
+	 
+</body>
+</html>

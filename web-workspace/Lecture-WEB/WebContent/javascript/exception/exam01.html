@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	try {
+		let array = new Array(99999999999) //배열 길이에 제한이 있음!
+	} catch(e) {
+		alert('예외 발생!')
+		console.log(e)
+		console.log(e.message)
+		
+		for(var i in e) {
+			document.write(i + ' : ' + e[i] + '\n') // 적용이 안되네.
+		}
+	} finally{
+		console.log('finally 구문 진입...')
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

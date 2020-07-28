@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
+<script>
+
+	//////////////////////////////////////////////////////////////////////////////////
+	var dictArr = ["keyboard", "mouse", "water", "face", "apple", "coffee"] // 단어 배열
+	var dictLength = dictArr.length; // 단어의 개수
+	var ranNum = Math.floor(Math.random() * 6); // 랜덤 인덱스 생성
+	// alert(dictLength)
+	// alert(ranNum);
+	var word = dictArr[ranNum]; // 무작위로 단어를 추출
+	// var wordArr = word.split(""); // 추출된 단어를 배열로 생성
+	// alert(wordArr);
+	var wordLength = word.length; // 단어의 길이
+	//////////////////////////////////////////////////////////////////////////////////
+	
+	
+	
+	
+	//////////////////////////////////////////////////////////////////////////////////
+	var opportunity = 6; // 맞출 수 있는 기회를 6번으로 설정
+	
+	var msg = '';
+	
+	var checkOverlap = []; // 중복 검사용 배열
+	var answerArr = []; // 답변으로 보여줄 배열
+	
+ 	for(var cnt = 1; cnt <= wordLength; cnt++){
+		// document.write("* ");
+		answerArr.push("* ");
+		//msg += '* ';
+ 	}
+ 	
+	alert(answerArr)
+	
+	//////////////////////////////////////////////////////////////////////////////////
+ 	//alert(msg);
+ 	out : while(true){
+	 	var answerOne = prompt("a - z 중 하나를 입력하세요(기존에 입력한 것은 다시 입력할 수 없습니다.)");
+	 	while(checkOverlap.includes(answerOne)){
+	 		answerOne = prompt("a - z 중 하나를 입력하세요(기존에 입력한 것은 다시 입력할 수 없습니다.)");
+	 	}
+	 	checkOverlap.push(answerOne);
+	 	
+	 	var idx = word.indexOf(answerOne);
+	 	if(idx == -1){
+	 		alert(answerOne + "는 존재하지 않습니다.")
+	 		alert("기회는 " + (--opportunity) + "번 남았습니다.");
+	 	} else{
+	
+	 		while(idx != -1){
+	 			answerArr[idx] = answerOne;
+		 		idx = word.indexOf(answerOne, idx +1);
+		 	}
+	 		
+			alert(answerArr);
+			var check = prompt("단어를 아시겠습니까? y / n");
+			if(check == 'y' || check == 'Y'){
+				let ansTmp = prompt("정답을 입력하세요")
+				if(ansTmp == word){
+					alert("정답입니다.");
+					break out;
+				} else{
+					
+					alert("정답이 아닙니다.");
+				}
+			}
+	 	}
+	 	
+	 	if(opportunity == 0){
+	 		alert("기회를 모두 소진했습니다. game over");
+	 		break out;
+	 	}
+ 	}
+	//////////////////////////////////////////////////////////////////////////////////
+ 	
+ 	
+</script>
+</head>
+<body>
+
+</body>
+</html>

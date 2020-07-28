@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+		width: 300px;
+		margin: 10px;
+		padding: 10px;
+		text-align: center;
+		border: 2px solid red; /* 한번에 이렇게 설정 가능하구나! */
+		/* display : inline; (세로로 구분되는)블록 태그를 inline(옆으로 붙는) 태그로 사용할 수 있음  */
+		/* display : table-cell; div 태그를 table 태그처럼 다룰 수 있다. 딱 달라 붙는다. */
+	}
+	
+	.div01 {
+		border-radius: 10px;
+	}
+	
+ 	.div02{
+		border-radius: 10px;
+		border-bottom-left-radius: 0;
+		border-top-right-radius: 0;
+	} 
+	
+	.div03{
+		border-radius: 10px;
+		border-top-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+	
+	.div04{
+		border-radius: 30px/10px; /* 가로 반지름 길이 / 세로 반지름 길이 */
+		box-shadow: 10px 10px black;
+	}
+	
+	.div05{
+		border-radius: 30px/10px; /* 가로 반지름 길이 / 세로 반지름 길이 */
+		box-shadow: 10px 10px 10px 10px black;
+	}
+
+
+
+</style>
+
+
+</head>
+
+<body>
+	<div class = "div01">사각형1</div>
+	<div class = "div02">사각형2</div>
+	<div class = "div03">사각형3</div>
+	<div class = "div04">사각형4</div>
+	<div class = "div05">사각형5</div>
+</body>
+</html>

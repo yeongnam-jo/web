@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.c1 {
+		font-style: italic;
+	}
+	
+	.c2 {
+		color : orange
+	}
+	
+	.red{
+		color : red
+	}
+	
+	.blue{
+		color : blue
+	}
+	
+</style>
+<script src="/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		// body 밑의 모든 태그에 red라는 클래스를 추가하기
+		//$('body *').addClass('red')
+		// $('body h1').addClass('red') ==> body 밑의 h1 태그에 red라는 클래스 추가하기
+		
+		$('body h1').addClass('blue') // body의 후손태그 중 h1에 blue 라는 클래스 추가하기
+		$('body *').addClass('red') // body 밑은 모든 태그에 'red' 라는 클래스 추가
+		
+		$('h1').removeClass('red')
+		
+		
+	})
+</script>
+</head>
+<body>
+	<h1 class ="c1 c2">나는 문장1입니다</h1>
+	<h1>나는 문장2입니다</h1>
+	<p>나는 단락입니다</p>
+	<div>
+		나는 구역입니다.
+		<h1>TEST</h1>
+	</div>
+</body>
+</html>

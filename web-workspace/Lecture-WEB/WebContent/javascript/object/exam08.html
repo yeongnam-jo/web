@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function Person(name, phone, addr) {
+		this.name = name;
+		this.phone = phone;
+		this.addr = addr;
+	}
+	
+	Person.prototype.info = function() {
+		var msg = '';
+		for(let key in this) {
+			if((typeof this[key] != 'function'))
+				msg += key + ' : ' + this[key] + '<br>'
+		}
+		document.write(msg)
+	}
+	
+	function Doctor(name, phone, addr, major) {
+	
+		/* this.super = Person;
+		this.super(name, phone, addr); */
+
+		this.aaa = Person;
+		this.aaa(name, phone, addr); // 이렇게하면 Person 객체의 속성을 가져올 수 있는듯!
+		
+//		Person.call(this, ...arguments)
+//		Person.apply(this, arguments)
+//		Person.call(this, name, phone, addr)
+		
+		this.major = major
+	}
+	
+	Doctor.prototype = Person.prototype;
+	
+	let person = new Person('홍길동', '010-1111-2222', '경기도 광명시')
+	person.info()
+	
+	let doctor = new Doctor('나최고', '010-4444-5555', '서울시 서초구 서초동', '성형외과')
+	console.log(doctor)
+	
+	document.write('person instanceof Person : ' + (person instanceof Person) + '<br>') 
+	document.write('doctor instanceof Doctor : ' + (doctor instanceof Doctor) + '<br>') 
+	document.write('doctor instanceof Person : ' + (doctor instanceof Person) + '<br>') 
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+

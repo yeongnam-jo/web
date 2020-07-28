@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function() {
+		var tag = document.createElement('h1')
+		var tagText = document.createTextNode('Bye')
+		// 여기까지는 h1 태그내에 hello가 들어가있지는 않다.
+		
+		console.log(tag)
+		console.log(tagText)
+		tag.appendChild(tagText)
+		// 밑에 body 태그와 h1은 연결되어 있지 않은 상태다.
+		document.body.appendChild(tag);
+		
+		let imgTag = document.createElement('img')
+		imgTag.src = "https://t1.daumcdn.net/daumtop_chanel/op/20170315064553027.png"
+//		console.log(imgTag)
+		
+		aTag = document.createElement('a')
+		//aTag.href = 'http://www.daum.net'
+		aTag.setAttribute('href', 'http://www.daum.net')
+		aTag.setAttribute('target', '_blank')
+		
+		aTag.appendChild(imgTag)
+		document.body.appendChild(aTag)
+		
+		console.log(aTag)
+		
+		
+		
+		
+		
+	}
+</script>
+</head>
+<body>
+	<h1>Hello</h1>
+	<img src = "https://t1.daumcdn.net/daumtop_chanel/op/20170315064553027.png">
+</body>
+</html>

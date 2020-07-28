@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var person = {
+		'name' 	: '홍길동',
+		'phone' : '010-1111-2222',
+		'addr'	: '경기도 광명시',
+		'info'	: function(){
+			
+			// 속성명 : 속성값 출력하기 (1) ===> 단순 노가다
+			alert(
+				'name : ' + this.name + '\n'
+				+ 'phone : ' + this.phone + '\n'
+				+ 'addr : ' + this.addr
+			
+			);
+			
+			// 속성명 : 속성값 출력하기 (2) ===> with(this) 활용 노가다 
+			let msg = ''
+			with(this){ 
+				// this를 붙여줘야 속성에 접근할 수 있다.
+				// 그런데! with(this)를 쓰면 this를 안 붙여도 된다.
+				// with(this) 하면, 속성명 앞에 'this.' 붙게 됨(보이지는 않음)
+				msg += 'name : ' + name + '\n';
+				msg += 'phone : ' + phone + '\n';
+				msg += 'addr : ' + addr + '\n'
+			}
+			alert(msg);
+
+			
+			
+			// 속성명 : 속성값 출력하기 (3) ===> for 반복문 활용
+			for(var key in this){
+				if((typeof this[key]) != 'function') 
+					// typeof 연산자는, 그 뒤에 오는 것의 타입을 반환해준다.
+					// instanceof와 비슷하다.
+				document.write(key + " : " + this[key] + '<br>');
+			}
+			
+		}
+	
+	}
+	
+	// document.write(person.toString() + '<br>');
+	
+	
+	// 속성명 : 속성값 출력하기 (4) ===> toString 함수 활용하기
+	person.toString = function(){
+		
+		let msg = '';
+		for(let key in this){ // this : 객체명, key : 속성명
+			if((typeof this[key] != 'function')) // 아하! type이 'function'인가요? 물어본거다.
+				// this['info']	하면 그 내용부까지 줄줄이 많은 내용이 나옵니다.
+				// typeof this['info'] 라고 했기 때문에, 'function' 으로 출력되는 것임.
+				
+					
+				// this[key] => person['속성명'] 싱글쿼테이션이 붙어있음!! 그래서 이렇게 써야함. 
+				// 속성값 표현 방법 2가지 : (1) 객체명['속성명'], (2) 객체명.속성명
+				msg += `${key} : ${this[key]}<br>`
+		}
+		return msg;
+	}
+	
+	document.write(person.toString());
+	document.write('<hr>');
+	document.write(person); 
+	document.write('<hr>');
+	// 객체명만 찍으면, 무조건 toString 메소드를 호출한다. java와 비슷하네요.
+	// 그런데, 자바스크립트에서는 오버라이딩이 없잖아? 그냥 명시적으로 객체.toString = function(){} 등으로 정의하면 되는듯!
+	// 아. 여기서는 오버라이딩 개념이 아니라고 합니다. person이라는 객체에 toString 이라는 함수를 만든 것이다. Object에 있는 toString과는 별개라고 합니다.
+	// person.prototype.toString = function(){} 등, prototype을 사용하려면 new 로 객체를 생성해야 쓸 수 있다.
+	// toString 함수는 객체에 애초에 존재한다. toString 함수를 덮어쓰지 않고, 객체명.toString() 하면 [object Object] 라고 뜹니다.
+	// 그리고 자바스크립트에서는 오버라이딩 개념이 없다. 덮어쓰기라고 보는 것이 더 정확할 듯!
+	// + 모든 자바스크립트 객체는 object를 상속받는다. 그것들은 정의되지 않은 상속받는 함수가 있다.
+	// + 오브젝트에 있는 toString을 쓰려면 person.prototype.toString 이렇게 써야한다.
+	
+	
+	with(person){
+		info(); // 'person.' 생략돼있다.
+	}
+	
+	// 위와 같은 표현 : person.info();
+	
+		
+	console.log(person);
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

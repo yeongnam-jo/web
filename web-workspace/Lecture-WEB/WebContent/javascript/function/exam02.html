@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function aaa(){
+		
+	}
+	
+	function aaa(a, b){
+		
+	}
+	
+	aaa(1,2,3,4,5); // 이래도 aaa(a,b) 함수가 호출된다.
+	
+	
+	/////////////////////
+	
+	function aaa(a, b){
+		switch(arguments.length){
+		case 0:
+			alert('call aaa()...');
+			break;
+		case 1:
+			alert('data : ' + arguments[0]);
+			break;
+		case 2:
+			alert('a : ' + arguments[0] + " b : " + arguments[1]);
+			break;
+		
+		}
+		
+	}
+	
+	aaa("hello", 20);
+	
+	 
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

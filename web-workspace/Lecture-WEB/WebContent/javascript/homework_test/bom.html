@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+/* 	a = 10;
+	//alert(a);
+	window.alert(a); */
+	
+	let width = screen.width
+	let height = screen.height
+	
+	
+	let sub = open("", "", "width = " +  width + " height = " + height) // 팝업 생성
+	
+	// open : 팝업 차단이면 null 결과를 반한다. null은 false와 같은 의미이므로 아래와같이 쓸 수 있다.
+	if(!sub){
+		alert('팝업창 옵션을 확인하세요')
+	}
+	
+	sub.moveTo(100, 100);
+	
+	setInterval(function() {
+		sub.moveBy(20,20)
+	}, 1000)
+	
+	
+	var sub = window.open("", "", "width = 400, height = 500")
+	
+	let width = screen.width
+	let height = screen.height
+	
+	sub.moveTo(0, 0)
+	sub.resizeTo(width, height)
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

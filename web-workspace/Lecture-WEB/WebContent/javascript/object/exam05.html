@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var person = {
+		name : '홍길동',
+		phone : '010-1111-2222',
+		toString : function() {
+			let msg = '';
+			for(let key in this) {
+				if((typeof this[key]) != 'function')
+					msg += key + ' : ' + this[key] + '<br>'
+			}
+			msg += '<hr>'
+			return msg
+		}
+	};
+	
+	// 얕은 복사(shallow copy)
+	var person2 = person; 
+		
+	document.write(person.toString())
+	document.write(person2.toString())
+	
+	person2.phone = '010-6666-7777';
+		
+	document.write(person.toString())
+	document.write(person2.toString())
+	
+	document.write("======= deep copy(1) =======")
+	// 깊은 복사(deep copy)
+	var person3 = {};
+	for(let key in person){
+		person3[key] = person[key]; // 아주 유연하게 속성을 추가할 수 있다.
+	}
+	
+	document.write(person.toString())
+	document.write(person3.toString())
+	
+	document.write("======= deep copy(2) =======")
+	// 깊은 복사 함수를 만들어서 더 쉽게 쓰자.
+	function clone(obj){
+		let object = {};
+		for(let key in obj){
+			object[key] = obj[key]
+		}
+		return object;
+	}
+	
+	person4 = clone(person);
+	document.write(person4.toString())
+	
+	// 함수 만드는 것도 귀찮아. 더 쉽게 써보자.
+	var person5 = {...person}; // 객체를 배열로 취급하기 때문에, 전개연산자('...')을 사용해서 각각의 element를 넣읗 수 있다. 
+	document.write(person5.toString())
+
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	window.onload = function() {
+		
+		var arr1 = [10, 4, 3, 35, 593, 2231, 3000];
+		var arr2 = [45, 235, 12, 654, 5555, 90];
+		
+		
+		function sort(left, right){
+			
+			return left - right;
+		}
+		 
+		
+		
+		function showMinMaxValues(...array){
+			let arr = array
+			/* alert(typeof arr)
+	 	 	alert(arr)
+			alert(arr[0][0])
+			alert(arr[0][1])
+			alert(arr[0][arr[0].length-1])
+			alert(arr[0].length) */
+			
+			var bool = true;
+			for(let i = 0; i < arr[0].length; i++){
+				for(let j = 0; j < arr[0].length; j++){
+					if(arr[0][i] >= arr[0][j]){
+						bool = true
+					} else {
+						bool = false
+						break;
+					}
+					
+				}
+				if(bool === true){
+					var max = arr[0][i]
+					break;
+				}
+				
+			}
+			
+			document.write("가장 큰수 : " + max + '<br>')
+			
+			var bool2 = true;
+			for(let i = 0; i < arr[0].length ; i++){
+				for(let j = 0; j < arr[0].lengt; j++){
+					if(arr[0][i] <= arr[0][j]){
+						bool2 = true
+					} else {
+						bool2 = false
+						break;
+					}
+					
+				}
+				if(bool2 === true){
+					var min = arr[0][i]
+					break;
+				}
+				
+			}
+			document.write("가장 작은수 : " + min )
+			document.write('<hr>')
+			
+			
+			
+
+		} 
+		
+		 showMinMaxValues(arr1)
+		 showMinMaxValues(arr2)
+		
+		
+	}
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>우리분식 메뉴</h2>
+	
+	<select> 
+		<option>순대</option>
+		<option selected>떡볶이</option>
+		<!-- <option selected="selected">라면</option> -->   
+		<!-- selected : 먼저 보여주기 -->
+		<!-- 속성명과 속성값이 같은 경우는, 속성명만 적어도 된다. -->
+		<!-- <option selected>라면</option>    -->
+		<option>튀김</option>
+		<option>쫄면</option>
+	
+	</select> 
+	<hr>
+	
+	<select size = 2>
+		<option>함골라보이소</option>
+		<option selected>치킨</option>
+		<option>피자</option>
+	</select>
+	
+	
+	<hr>
+	<select size = "2"> <!-- size : 처음 보여주는 속성 개수 -->
+		<option>떡볶이</option>
+		<option>순대</option>
+		<option selected="selected">라면</option>   
+		<!-- selected : 먼저 보여주기 -->
+		<!-- 속성명과 속성값이 같은 경우는, 속성명만 적어도 된다. -->
+		<!-- <option selected>라면</option>    -->
+		<option>튀김</option>
+		<option>쫄면</option>
+	
+	</select>
+	
+	<hr>
+	<select multiple = "multiple">
+		<!-- 속성명과 속성값이 같은 경우는, 속성명만 적어도 된다. -->
+		<!-- <select multiple>  -->
+		<option>떡볶이</option>
+		<option>순대</option>
+		<option>라면</option>   
+		<option>튀김</option>
+		<option>쫄면</option>
+	
+	</select>
+	
+	<hr>
+	<select>
+		<optgroup label="분식">
+			<option>떡볶이</option>
+			<option>순대</option>
+			<option>라면</option>   
+			<option>튀김</option>
+			<option>쫄면</option>
+		</optgroup>		
+		
+		<optgroup label="식사">
+			<option>돈까스</option>
+			<option>김치볶음밥</option>
+			<option>비빔밥</option>
+		</optgroup>
+		
+	</select>
+	<br>
+	
+	<select>
+		<optgroup label="wow">
+			<option>할룽</option>
+			<option>생수</option>
+		</optgroup>
+	
+	</select>
+	
+	<hr>
+	<input list="foods01"> <!--  list : id를 바꿔주면, 화면에 나타나는 리스트가 바뀐다. -->
+	<!-- 동적으로 보여주는 리스트를 바꿀 수 있겠네! -->
+	<datalist id = "foods01">
+			<option>떡볶이</option>
+			<option>순대</option>
+			<option>라면</option>   
+			<option>튀김</option>
+			<option>쫄면</option>
+	</datalist>
+	<datalist id="foods02">
+			<option>돈까스</option>
+			<option>김치볶음밥</option>
+			<option>비빔밥</option>
+	</datalist>
+	
+	
+	
+	
+	
+</body>
+</html>

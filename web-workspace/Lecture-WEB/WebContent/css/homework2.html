@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body{
+		width : 900px;
+		margin-left : auto; /* 가운데 정렬 */
+		margin-right: auto; /* 가운데 정렬 */
+	}
+	
+	header{
+		background-color: red;
+		height : 150px;
+		
+	}
+	
+	#h01 {
+		width : 250px;
+		float : left;
+		
+	}
+	#h02 {
+		width : 650px;
+		float : right;
+		background-color: yellow;
+	}
+	
+	
+	#aside01{
+		background-color: blue;
+		height : 500px;
+		width : 200px;
+		float : left;
+	}
+	
+	#section01{
+		background-color: green;
+		height : 50px;
+		width : 700px;
+		float : right; 
+	}
+	
+ 	#aside02{
+		background-color: yellow;
+		height : 450px;
+		width : 50px;
+		float : left;
+	} 
+	
+	#section02{
+		background-color: olive;
+		height : 300px;
+		width : 350px;
+		float : left;
+	}
+	
+	#section03{
+		background-color: pink;
+		height : 300px;
+		width : 300px;
+		float : right;
+	
+	}
+	
+	#section04{
+	
+		background-color: gray;
+		height : 150px;
+		width : 650px;
+		float : right;
+	}
+	
+	footer{
+		background-color: orange;
+		height : 150px;
+		clear : both;
+	}
+	a:link{ /* 위와 똑같은 의미다 */
+		color : lime;
+		/* text-decoration: underline; */
+		text-decoration: none;
+	}
+	
+	a:visited { /* a 태그 중 방문기록이 있는 것. 설정 안하면 보라색으로 나타난다. */
+		color : lime;
+	}
+	
+	a:hover { /* 마우스 올렸을 때 */
+		background-color: lightgray;
+		text-decoration: underline;
+	}
+	
+	#numberlist li { /* 자식 중 li인 것 */
+		float : left; /* 마진을 안 주면 붙어버린다 */
+		margin : 0px 30px 0px 0px; /* top - bottom - left - right */
+		/* margin : 10px 10px; 2개를 적으면, left - right */
+		font-size : 12pt;
+		list-style : none;
+		
+	}
+	
+</style>
+
+</head>
+<body>
+	<header id = "h01">
+		제목들
+	</header>
+	<header id = "h02">
+		카데고리들	
+	</header>
+	
+	<aside id="aside01">
+		<ul id = "numberlist">
+		<li><a href = "https://www.kebhana.com/index.html">하나은행</a><hr></li>
+		<li>TWO</li>
+		<li>THREE</li>
+		<li>FOUR</li>
+		<li>FIVE</li>
+		<li>SIX</li>
+		<li>SEVEN</li>
+		<li>EIGHT</li>
+		<li>NINE</li>
+		<li>TEN</li>
+	</ul>
+	</aside>
+	
+	<!-- <aside id="aside02">aside부분</aside> -->
+	<section id="section01">
+		케이크 히스토리
+	</section>
+	
+	<aside id = "aside02"></aside>
+	
+	<section id="section02">
+	</section>
+	
+	<section id="section03">
+	</section>
+	<section id="section04">
+	</section>
+	
+	<footer>footer부분</footer>
+</body>
+</html>

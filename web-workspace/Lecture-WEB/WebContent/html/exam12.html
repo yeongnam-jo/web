@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- HTML5이전 embed: <embed src="playlist/Wildlife.wmv">  -->	
+	<!-- wmv: 윈도우미디어파일이라, 크롬에서는 다운을받고 익스플로러에서는 실행한다 -->
+	
+	HTML5이전 embed: <br>
+	<embed src="playlist/Kalimba.mp3"> 
+	
+	HTML5 버전 : <br>
+	<audio src ="playlist/Kalimba.mp3" controls autoplay="autoplay"></audio>
+	<hr>
+	
+	<h3>HTML5 이전버전 : embed tag 이용</h3>
+	<embed src="playlist/movie.mp4">
+	
+	<h3>HTML5 이전버전 : object tag 이용</h3>
+	<object data = "playlist/movie.mp4"></object>
+	
+	<h3>HTML5 버전 : video tag 이용</h3>
+	<video src = "playlist/movie.mp4" controls ="controls"
+			width = "640" height ="480"></video>
+	<video src = "playlist/movie.mp4" controls ="controls"
+			width = "640" height ="480"></video>
+			
+	<h3> Youtube 영상 상입</h3>
+	<iframe width="560" height="315" 
+	src="https://www.youtube.com/embed/yhXT3hBaDoU" 
+	frameborder="0" 
+	allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+	allowfullscreen></iframe>
+	
+	<h3> Youtebe 영상 삽입: 시작시간 지정</h3>
+	<iframe width="560" height="315" 
+	src="https://www.youtube.com/embed/yhXT3hBaDoU?start=28" 
+	frameborder="0" 
+	allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+	allowfullscreen></iframe>
+	
+	<h3> 03. HTML 기초.pdf</h3>
+	<iframe src="playlist/03. HTML 기초.pdf" width = "640", height ="480">
+	</iframe>
+	
+	<hr>
+	<canvas width="600" height ="600" style = "border : 5px dotted red"> </canvas>
+	
+	
+</body>
+</html>

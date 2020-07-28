@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	//일반적인 함수 표현식
+	var add = function(a,b){
+		return a + b;
+	}
+
+
+	//람다 표현식, arrow function
+	var alertNumber = (a) => {alert(a * 10); return a * 10}; 
+	var add = (a,b) => {return a+b}; // 함수의 내용부가 return 뿐이면, 이렇게 줄여쓸 수 있다.
+	var add = (a,b) => a+b; // 더 줄일 수 있다.
+
+	var result = alertNumber(5);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/* ancester의 모든 후손 */
+	#ancester * { 
+		border : 2px solid red;
+		display : block;
+		padding : 10px;
+		margin : 10px;
+	}
+	
+
+</style>
+<script src="/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+		//$('span').parent().css('border-color', 'blue') // 부모태그 : parent
+		//$('span').parents().css('border-color', 'blue') // 선조태그 : parents
+		//$('span').parents('div').css('border-color', 'blue') // 선조태그 중 특정 : parents('태그명')
+		//$('span').parent().parent().css('border-color', 'blue') // 선조태그 중 특정
+		//$('span').parentsUntil('div').css('border-color', 'blue') // 부모 중 div 태그 이전까지 적용
+		
+		//$('#ancester').children().css('border-color', 'purple') // 
+		//$('#ancester').children('ul').css('border-color', 'purple') // ==> 불가능하다. 내 자식은 dive 2개 뿐임.
+		//$('#ancester').find('ul').css('border-color', 'purple') // 후손들 중 ul 태그 찾아라 / 위에서 아래로 내려가면서 ul 태그를 찾는다. 아래서 위로는 find 안먹음.
+		//$('#ancester').find('*').css('border-color', 'purple') // 위에서 아래로 내려가면서 모든 태그에 적용
+		//$('#ancester').find('*').last().css('border-color', 'purple') // 마지막 순서에 있는 태그
+		
+		//$('#ancester').filter('*').css('border-color', 'purple') 
+		$('#ancester *').filter('div').css('border-color', 'purple')  //filter는 어디까지 찾으라고 범위를 지정해줘야 한다. 괄호 안이 범위다.
+		//$('#ancester').find('div').css('border-color', 'purple') 
+		
+		//filter 태그와 find 태그의 차이점 ?
+		// find :  후손들 중에서 div 태그들을 찾자
+		// filter : 괄호 안이 범위다. id가 ancester인 태그들 중 div 인 것.
+		
+	})
+</script>
+</head>
+<body>
+	<div id="ancester">
+		<div id="div01">div1
+			<ul>ul
+				<li>li
+					<span>span</span>
+				</li>
+			</ul>
+		</div>
+		<div id="div02">
+			<p>p
+				<span>span</span>
+			</p>
+		</div>
+	</div>
+</body>
+</html>

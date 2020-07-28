@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	false && alert("출력이 됩니다."); // 교환법칙 X
+	alert("출력이 됩니다.") && false; //  교환법칙 X
+	
+	true || alert("|| 출력이 안됩니다."); // 이미 true이기 때문에 뒤에 조건을 실행하지 않는다. wow
+	var result = alert("A") || alert("B") ; // 자바스크립트에서는 0이 아닌 모든값이 true. (? 숫자만 해당되는건가)
+	alert(typeof result);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	
+	var a = 1;
+	var b = -1;
+	var c = 0;
+	
+	var d = ++a || ++b && ++c; //우선순위는 and 연산자가 높다. 그래서 괄호 친 것
+	// var d = ++a || (++b && ++c;) 
+	alert('d: ' + d + ",a : " + a + ",b : " + b + ",c : " + c)
+	alert(typeof d);
+	
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

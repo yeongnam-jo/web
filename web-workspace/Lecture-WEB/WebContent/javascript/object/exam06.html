@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function Person(name, phone, addr){
+		this.name = name; 
+		// 지금 이 객체의 name 이라는 속성을 추가할건데, 그 속성값은 매개변수로 받는 name 변수 값으로 할거야
+		this.phone = phone;
+		// this(이 객체에) phone 이라는 속성을 추가할건데, 그 값은 매개변수 phone의 값이다.
+		this.addr = addr;
+		
+		this.info = function() { // 콘솔로그로만 객체의 내용을 볼 수 있기 때문에, 객체 내용을 볼 수 있도록 별도의 함수를 생성한다.
+			var msg = '';
+			for(let key in this){  // this : Person 객체를 가르킴 /  1.5 for 같음.
+				if((typeof this[key] != 'function'))
+						msg += key + ' : ' + this[key] + '<br>'
+			} 
+			    
+			document.write(msg);
+		}
+
+	}
+	
+	var p = new Person('홍길동', '010-1111-2222', '서울시 서초구');
+	// console.log(p);
+	p.info();
+	
+	var p2 = new Person();
+	p2.info();
+	
+	Person.prototype.aaa = function() {
+		alert('aaa');
+	}
+	console.log(p);
+	p.aaa();
+	
+	document.write('p instanceof Person : ' + (p instanceof Person) + '<br>'); // true
+	document.write('p instanceof Object : ' + (p instanceof Object) + '<br>'); // true : 모든 객체는 Object를 상속받는다.
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

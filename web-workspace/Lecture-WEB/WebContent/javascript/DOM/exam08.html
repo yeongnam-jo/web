@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	/*
+		DOM level 2
+		표준 이벤트모델 : addEventListener(이벤트속성,handler, capturing 사용여부)
+	*/
+
+	window.onload = function(){
+		let btn = document.getElementById('btn')//고전적 이벤트 모델. 인라인 방식은 body 부분에서 onclick 관련 내용 작성
+		btn.addEventListener('click', function(){ //onclick 인데, on을 생략하고 click이라고 쓰면 된다.
+			alert('button click...')
+		}, false) // true일 경우 : 이벤트 캡쳐링이 발생한다. / false일 경우 : 이벤트 버블링 발생
+		
+		let span = document.querySelector('span')
+		span.addEventListener('click', function(){  
+			
+			alert('span click...')
+		})
+	}
+
+</script>
+</head>
+<body>
+	<button id ='btn'><span>CLICK</span></button>
+</body>
+</html>

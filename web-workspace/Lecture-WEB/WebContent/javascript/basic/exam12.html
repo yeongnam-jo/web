@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/*
+		이름을 입력하세요 : 홍길동
+		나이를 입력하세요 : 28
+		홍길동 10년 후의 나이는 38세
+		1번쨰 입력되었습니다
+		계속하시겠습니까? <- yes
+				
+		이름을 입력하세요 : 홍길순
+		나이를 입력하세요 : 22
+		홍길동 10년 후의 나이는 32세
+		2번쨰 입력되었습니다
+		계속하시겠습니까? <- no
+	
+	*/
+	
+	
+	
+	
+/* 	let cnt = 0;
+	while (true) {
+		let name = prompt('이름을 입력하세요');
+		let age = prompt('나이를 입력하세요');
+		age = Number(age);
+		alert(name + '의 10년 후의 나이는 ' + (age + 10) + '입니다.'); // number형으로 바꾸지 않으면, concat 된다.
+		alert(++cnt + '번째 입력되었습니다.')
+
+		var input = confirm('계속 하시겠습니까?');
+		if(input === false){
+			break;
+		}
+	} */
+	
+	
+	let cnt = 0;
+	do{
+		
+		let name = prompt('이름을 입력하세요');
+		let age = prompt('나이를 입력하세요');
+		age = Number(age);
+		alert(name + '의 10년 후의 나이는 ' + (age + 10) + '입니다.'); // number형으로 바꾸지 않으면, concat 된다.
+		alert(++cnt + '번째 입력되었습니다.')
+	
+	} while(confirm('계속하시겠습니까?'));
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

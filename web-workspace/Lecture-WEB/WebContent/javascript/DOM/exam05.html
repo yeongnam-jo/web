@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function() {
+		let idTag = document.getElementById('id')
+		idTag.parentNode.removeChild(idTag)
+		// idTag.remove() ==> explore에서는 작동하지 않음.
+		
+		let pwd = document.getElementById('pwd')
+		pwd.style.fontSize = '20pt'
+		pwd.style.color = 'orange'
+		pwd.style.backgroundColor = 'yellow'
+		pwd.style['border-style'] = 'dashed'
+		pwd.style['border-color'] = 'blue'
+		pwd.style['border-width'] = '3px'
+		
+	}
+</script>
+</head>
+<body>
+	<table border="1" style="width:100px; height: 100px">
+		<tr>
+			<td id="id">아이디</td>
+		</tr>
+		<tr>
+			<td id="pwd">PASSWORD</td>
+		</tr>
+	</table>
+</body>
+</html>

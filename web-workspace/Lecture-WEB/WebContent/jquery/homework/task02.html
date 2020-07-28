@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+<style>
+	#grid{
+		background-image: url("/Lecture-WEB/html/images/map.png");
+		background-size: cover;
+		width : 1500px;
+		height : 700px;
+	}
+	
+	.nation{
+		background-color: black;
+		color : white; 
+		/* box-shadow: x_offset y_offset blur; */
+		border : 1px solid black;
+		box-shadow: 5px 5px grey;
+		font-family : 'Nanum Gothic', "나눔바른펜", "궁서";
+	
+		
+	}
+	
+	#korea{
+		position : absolute;
+		left : 1206px;
+		top : 235px;
+	}
+	
+	#jap{
+		position : absolute;
+		left : 1300px;
+		top : 222px;
+	}
+	
+	#newyork{
+		position : absolute;
+		left : 440px;
+		top : 210px;
+	}
+	
+	#atlanta{
+		position : absolute;
+		left : 410px;
+		top : 245px;
+	}
+	
+	#africa{
+		position : absolute;
+		left : 503px;
+		top : 432px;
+	}
+	
+	
+</style>
+
+<script src="/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+<script>
+	$(document).ready(function(){
+		$(".tooltip_event").tooltip();
+		
+		$('body').click(function(event) {
+			console.log(event.pageX, event.pageY)
+			console.log(event)
+		})
+		
+		/* $(function() {
+    		$(".tooltip_event").tooltip();
+		}); */
+		
+	    function getWorldTime(tzOffset) { // 24시간제
+	        var now = new Date();
+	        /**
+	         * getTime() : 로컬 컴퓨터의 시간 값을 밀리초 단위로 가져옵니다.
+	         * getTimezoneOffset() : 로컬 컴퓨터의 시간과 UTC(협정 세계 표준시) 간의 차이를 분 단위로 가져옵니다.
+	         */
+	        var tz = now.getTime() + (now.getTimezoneOffset() * (60 * 1000)) + (tzOffset * (60 * 60 * 1000));
+	        now.setTime(tz);
+	 
+	        var s = leadingZeros(now.getFullYear(), 4) + '-'
+	                + leadingZeros(now.getMonth() + 1, 2) + '-'
+	                + leadingZeros(now.getDate(), 2) + ' ' +
+	 
+	                leadingZeros(now.getHours(), 2) + ':'
+	                + leadingZeros(now.getMinutes(), 2) + ':'
+	                + leadingZeros(now.getSeconds(), 2);
+	        return s;
+	    }
+	    
+	    function leadingZeros(n, digits) {
+	        var zero = '';
+	        n = n.toString();
+	 
+	        if (n.length < digits) {
+	            for (i = 0; i < digits - n.length; i++)
+	                zero += '0';
+	        }
+	        return zero + n;
+	    }
+	    
+	    
+		
+		//document.getElementById('korea').title = getWorldTime(+9);
+		//document.getElementById('jap').title = getWorldTime(+9);
+		//document.getElementById('newyork').title = getWorldTime(-4);
+		//document.getElementById('atlanta').title = getWorldTime(-4);
+
+		$('#korea').attr('title', getWorldTime(+9));
+		$('#jap').attr('title', getWorldTime(+9));
+		$('#newyork').attr('title', getWorldTime(-4));
+		$('#atlanta').attr('title', getWorldTime(-4));
+		$('#africa').attr('title', getWorldTime(+2));
+
+	})
+</script>
+</head>
+<body>
+	<div id = "grid">
+		<div id = "korea" class = "tooltip_event"> 
+			<div class = "nation">대한민국</div>
+		</div>
+		<div id = "jap" class = "tooltip_event"> 
+			<div class = "nation">일본</div>
+		</div>
+		<div id = "newyork" class = "tooltip_event"> 
+			<div class = "nation">뉴욕</div>
+		</div>
+		<div id = "atlanta" class = "tooltip_event"> 
+			<div class = "nation">아틀란타</div>
+		</div>
+		<div id = "africa" class = "tooltip_event"> 
+			<div class = "nation">아프리카</div>
+		</div>
+		
+	</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src = "js/jquery-3.5.1.min.js"> </script>
+<script>
+	$(document).ready(function(){
+		$('input').keydown(function(){ //키보드를 누르고 있을 때
+			$(this).css('color', 'orange')
+		})
+		
+		$('input').keyup(function(){ //키보드 떼고 있을 때
+			$(this).css('color', 'black')
+		})
+
+		$('input').focus(function(){ //focus 됐을 때
+			$(this).css('border', '2px solid skyblue')
+		})
+		
+		$('input').blur(function(){ //unfocus 됐을 때
+			$(this).css('border', '1px solid black')
+			$(this).css('background-color', 'white')
+		})
+		
+		$('input').blur(function() {
+			$(this).css('border', '1px solid black')
+			$(this).css('background-color', 'white')
+		})
+
+	})
+</script>
+</head>
+<body>
+	이름 : <input type = "text" size = "30"><br>
+	전번 : <input type = "text" size = "30"><br>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	
+	let width = screen.width;
+	let height = screen.height;
+	var reWidth = 0;
+	var reHeight = 0;
+	
+	let sub = open("", "", "width = " +  width + " height = " + height) // 팝업 생성
+	
+	let timerId = setInterval(function() {
+		
+		width = width - 40;
+		height = height - 40;
+		
+		sub.moveTo(reWidth, reHeight);
+		sub.resizeTo(width, height)
+		
+		reWidth += 20;
+		reHeight += 20;
+		
+	}, 1000)
+	
+	setTimeout(() => {clearInterval(timerId)}, 10000);
+
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

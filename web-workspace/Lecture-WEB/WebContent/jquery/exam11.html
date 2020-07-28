@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+		
+		/* border : 2px solid red; */
+		width : 100px;
+		height : 100px;
+		background-color: orange;
+		font-size: 10pt;
+	}
+</style>
+
+<script src = "js/jquery-3.5.1.min.js"> </script>
+<script>
+	$(document).ready(function(){
+		$('div').css({
+			/* width : 100px;
+			height : 100px;
+			background-color: red; */
+		})
+		
+		$('div').hide(1000) //left-top으로 사라진다
+		$('div').show(1000) //left-top으로부터 나타난다
+		
+		$('div').fadeOut(1000) // 크기를 유지한 채 사라진다
+		$('div').fadeIn(1000) // 크기를 유지한 채 나타난다
+		
+		$('div').fadeTo(1000, 0.4) // 시간, 투명도
+		
+		$('div').fadeToggle(1000)
+		$('div').fadeToggle(1000)
+		
+	})
+	
+</script>
+</head>
+<body>
+	<div>100x100<br>사각형</div>
+</body>
+</html>

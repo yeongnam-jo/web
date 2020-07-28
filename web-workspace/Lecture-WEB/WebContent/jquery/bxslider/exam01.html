@@ -1,0 +1,39 @@
+bxslider 활용하여 슬라이더 만들기
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+<style>
+	img{
+		width : 250px;
+		height : 200px;
+	}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.slider').bxSlider({
+        mode: 'vertical',
+        captions: 'true',
+        slideWidth: 600
+    }); 
+  });
+</script>
+
+</head>
+<body>
+	<div class="slider">                              
+		<div><img src="/Lecture-WEB/html/images/추노4.png" title="추노하고싶당.."></div>
+		<div><img src="/Lecture-WEB/html/images/추노1.jpg" title="추노 준비중..."></div>
+		<div><img src="/Lecture-WEB/html/images/추노3.png" title="추노준비완료"></div>
+		<div><img src="/Lecture-WEB/html/images/추노2.jpg" title="@@추노 완료@@"></div>
+	</div>                                            
+
+</body>
+</html>

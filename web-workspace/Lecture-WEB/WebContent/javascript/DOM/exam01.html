@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	console.log(document.body) //null이 찍힘. 현재는 body에 대한 해석이 되지 않은 상태이기 때문이다. 지금은 head 해석중임.
+	
+	window.onload = function(){
+		console.log(document.body) // onload 이기때문에 body까지 로드되고나면 자동으로 해석된다. 그래서 document의 body를 볼 수 있다.
+		// document.write(document.body.innderHTML) // 내용부가 보이지 않고, [object HTMLBodyElement] 라고 뜬다.
+		alert('innerHTML : ' + document.body)
+		alert('innerHTML : ' + document.body.innerHTML) //태그명까지 다 나온다. 
+		alert('innerHTML : ' + document.body.innerText) //태그를 빼고 텍스트만 다 나온다. 
+		
+		let tags = ''
+		tags += '<ul>'
+		tags += '<li>red</li>'
+		tags += '<li>orange</li>'
+		tags += '<li>blue</li>'
+		tags += '</ul>'
+		
+		/*
+		// document.write(tags);
+		document.body.innerHTML = tags; // body 태그 내에 tags 라는 내용으로 초기화 하겠다.
+		alert('innerHTML : ' + document.body.innerHTML) //태그명까지 다 나온다. 
+		document.body.innerHTML = '<h1>aaa</h>' // body 태그 내에 tags 라는 내용으로  초기화 하겠다.
+		alert('innerHTML : ' + document.body.innerHTML) //태그명까지 다 나온다. 
+		document.body.innerText = '<h1>aaa</h>' // <h1> </h1> 등이 태그가 아니라 일반 텍스트로 인식한다.
+		alert('innerHTML : ' + document.body.innerHTML) //태그명까지 다 나온다. 
+		*/
+		
+		/*
+		// document.body.innerHTML =  document.body.innerHTML + tags;
+		document.body.innerHTML += tags;
+		*/
+		
+		document.body.innerHTML += '<br>';
+		
+		
+		
+		
+	}
+</script>
+</head>
+<body>
+	hello<br>
+	<h1>안녕하삼</h1>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function makePerson(name, phone, addr) {
+		var p = {
+			'name' : name, // 콜론왼쪽에 있으면 속성명으로 인식하기때문에, 인자와 이름이 같더라도 똑똑하게 받아들인다.
+			phone : phone,
+			addr : addr,
+			info : function() {
+				var msg = ''; //호이스팅이 일어나기때문에, 함수가 끝난 후에도 document.write(msg) 처럼 사용 가능.
+				for(let key in this){
+					if(key != 'info')
+						msg += key + ' : ' + this[key] + '<br>';
+				}
+				document.write(msg);
+			}
+		}
+		return p;
+	}
+	
+	// var person = makePerson('홍길동', '010-1111-2222', '경기도 광명시');
+	let persons = [];
+	persons.push(makePerson('홍길동', '010-1111-2222' , '경기도 광명시'))
+	persons.push(makePerson('강홍길동', '010-2222-3333' , '서울시 서초구'))
+	
+	
+	// console.log(persons);
+	
+	
+	for(let i in persons){ // i는 index입니다! 주의하세요.
+		// alert(i); 
+		persons[i].info();
+	}
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/Lecture-WEB/jquery/js/jquery-3.5.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('#btn01').click(function(){
+			//버튼을 클릭했을 때 <h1> 세번째 문장 추가하기
+			// 방법(1) JS 문법
+			/* let h1Tag = document.createElement('h1')
+			let text = document.createTextNode('세번째 문장')
+			h1Tag.appendChild(text)
+			document.querySelector('div').appendChild(h1Tag) */
+			
+			// 방법(2) jQuery, append() 함수 내에서 위와 같은 로직이 돌 것이다.
+			$('div').append('<h1>세번째문장</h1>')
+		})
+		
+		$('#btn02').click(function(){
+			$('ol').prepend('<li>노랑</li>')
+		})
+		
+		$('#btn03').click(function(){
+			/* $('body').prepend('<h4>추가된 문장</h4>')
+			$('body').prepend('<h3>또 추가된 문장</h3>')
+			$('body').prepend('<h5>또또 추가된 문장</h5>') */
+			
+			// 위의 방식은, 추가되는 문장이 위로 붙는다
+			
+			// 아래 방식은. 첨자 나열되는 형태다.
+			$('body').prepend('<h4>추가된 문장</h4>', '<h3>또 추가된 문장</h3>', '<h5>또또 추가된 문장</h5>')
+		})
+		
+		
+		
+	})
+</script>
+</head>
+<body>
+	<div>
+		<h1>첫번째 문장</h1>
+		<h1>두번째 문장</h1>
+	</div>
+	<h2>색상표</h2>
+	<ol>
+		<li>빨강</li>
+		<li>파랑</li>
+		<li>녹색</li>
+	</ol>
+	<button id = "btn01">문장추가</button>
+	<button id = "btn02">색상추가</button>
+	<button id = "btn03">본문추가</button>
+</body>
+</html>

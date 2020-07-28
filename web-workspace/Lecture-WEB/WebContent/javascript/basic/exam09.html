@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	
+	var a = 10;
+	let b = 10;
+	const c = 10;
+	alert(`a = ${a}, b = ${b}, c = ${c}`);
+	
+	a = a * 5;
+	b = b * 5;
+	/* c = c * 5;  */ 
+	alert(`a = ${a}, b = ${b}, c = ${c}`);
+	
+	var a = 100;
+	/* let b = 100; */
+	alert(`a = ${a}, b = ${b}`); 
+	
+	
+	{
+		var temp = 1000;
+		let letTemp =2000;
+		alert(`temp = ${temp}, letTemp = ${letTemp}`);
+		
+	}
+	
+	alert(`temp = ${temp}`);
+	/* let, const는 블록스코프를 가진다. 따라서 마지막 문장이 실행되지 않는다. */
+	/* let형 사용을 권장한다고 함 */
+	alert(`temp = ${temp}, letTemp = ${letTemp}`);
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

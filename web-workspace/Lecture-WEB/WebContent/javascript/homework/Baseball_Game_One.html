@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	function random() {
+
+		var ranArr = [ 0, 0, 0 ];
+		for (var i = 0; i < ranArr.length; i++) {
+
+			ranArr[i] = Math.floor(Math.random() * 10);
+			
+			if (i > 0) {
+				for (j = 0; j < i; j++) {
+					if (ranArr[i] == ranArr[j]) {
+						i--;
+					}
+				}
+
+			}
+		}
+		return ranArr;
+
+	}
+
+
+	function baseball() {
+		let ball = 0;
+		let strike = 0;
+		let out = 0;
+		let count = 0;
+		
+		let ranArr = random();
+
+		while (true) {
+
+			let num = prompt('숫자 3개를 입력해주세요 ');
+			first = num.substr(0, 1);
+			second = num.substr(1, 1);
+			third = num.substr(2, 1);
+			ansArr = [ first, second, third ];
+
+
+			for (i = 0; i < 3; i++) {
+				for (j = 0; j < 3; j++) {
+					if (ranArr[i] == ansArr[j]) {
+						if (i == j) {
+							strike++;
+						} else {
+							ball++;
+						}
+
+					}
+				}
+			}
+			
+			if(strike > 0 || ball > 0){
+				if(strike == 3){
+					alert("축하합니다 정답입니다.");
+					break;
+				}
+				
+				alert(strike + "strike " + ball + "ball");
+			}
+			
+			
+			if(out == 3){
+				
+				alert("3 Out 입니다.");
+				break;
+			}
+			
+			count++;
+			alert("기회는 " + (10 - count) + "번 남았습니다.");
+			
+			if(count == 10){
+				
+				alert("아쉽습니다. 기회를 다 소진하셨습니다.");
+				alert("정답은" + ranArr);
+				break;
+			}
+		}
+	}
+	
+	baseball();
+</script>
+</head>
+<body>
+
+</body>
+</html>

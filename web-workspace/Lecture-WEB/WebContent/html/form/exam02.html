@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="http://www.naver.com">
+		<!-- <progress value = "50" max = "100"></progress> -->
+		<progress></progress>
+		<meter></meter>
+	
+		
+		색상 : <input type = "color"><br>
+		시간 : <input type = "time"><br>
+		<input type = "month"><br>
+		<input type = "week"><br>
+		날짜 : <input type = "date" min="2020-01-01" max="2020-12-31"> <br>
+		범위 : <input type = "range" min = "1", max = "10" step = "2"><br>
+		수량 : <input type="number" min = "1" max = "10"><br>
+		검색어 : <input type="search" size = "50"><br>
+		전화번호 : <input type = "tel" size = "50"
+					pattern="(010|011|016|017|018|019)-\d{3,4}-\d{4}"
+					placeholder="xxx-xxxx-xxxx 형태로 입력하세요"><br>
+					
+		<!-- 이메일 : <input type="text" size = "50"><br> -->
+		이메일 : <input type="email" size = "50" required autocomplete="on"><br>
+				
+		SNS주소 : <input type = "url" size ="50"><br>
+
+
+		<button>버튼</button>
+		<button type = "reset">초기화</button>
+		<button type = "submit">전송</button>
+
+
+		<!-- <input type="submit" value="전송"> -->
+		<!-- image는 submit으로 인식한다. -->
+		<input type = "button" value="버튼">
+		<input type = "reset"><br>
+		<input type="image" src = "/Lecture-WEB/html/images/submit.jpg" width = "140" height="50">
+		
+	</form>
+
+</body>
+</html>
+

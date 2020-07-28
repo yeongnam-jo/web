@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	window.onload = function() {
+		// 이벤트 버블링 :  (onlclick) 이벤트를 실행하면, 상위에 같은 이벤트를 모두 실행시킴
+		var span = document.querySelector('span')
+		var h1 = document.querySelector('h1')
+		var div = document.querySelector('div')
+				
+		span.onclick = function() { 
+			// 클릭했을 때의 이벤트(MouseEvent)를 e로 받는다. 매개변수명은 내 멋대로 정하면 됨.
+			// MouseEvent를 항상 날리고 있었는데, 우리가 사용하지 않은 것 뿐임.
+			alert('click span...')
+			console.log(arguments[0])
+		}
+		
+		h1.onclick = function() { // 클릭했을 때의 이벤트(MouseEvent)를 e로 받는다.
+			alert('click h1...')
+			arguments[0].cancelBubble = true // 나보다 상위의 같은 이벤트에 영향을 미치지 맙시다!
+		}
+		
+	/* 	func()
+		
+		func(1,2,3) */
+		
+		div.onclick = function() { // 클릭했을 때의 이벤트(MouseEvent)를 e로 받는다.
+			alert('click div...')
+		}
+	}
+	
+</script>
+</head>
+<body>
+	<div>
+		<h1>
+			<span>Hello</span>
+		</h1>
+	</div>
+</body>
+</html>

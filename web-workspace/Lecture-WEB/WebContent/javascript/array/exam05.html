@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var books = new Array();
+	
+	books.push('신데렐라')
+	books.push('박천구리')
+	books.push('소재구리')
+	books.push('박진구리')
+	
+	for (let index in books){
+		document.write(books[index] + '&nbsp;&nbsp;&nbsp;');
+	}
+	document.write('<hr>');
+	
+
+	var nums = [1,2,3,4,5,6,76,12,312,12];
+	document.write(nums + '<hr>');
+	nums.sort(); // 숫자를 문자열로 인식했네요! 
+	document.write(nums + '<hr>');
+	
+	
+	// 숫자 오름차순 방법
+	nums.sort(function(left, right) {
+		return left-right;		
+	})
+	
+	
+ 	document.write(nums + '<hr>');
+	
+	// 숫자 내림차순 방법
+	nums.sort(function(left, right) {
+		return right - left;		
+	})
+	
+ 	document.write(nums + '<hr>');
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
