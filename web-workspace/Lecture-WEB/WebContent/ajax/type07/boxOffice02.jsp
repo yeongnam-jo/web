@@ -27,7 +27,7 @@
 				
 				/* data	: 'key=--------------------&targetDt='+ searchDate + '&itemPerPage=3', */
 				data 	: {
-					key : '-----------------',
+					key : '---------------------',
 					targetDt : searchDate,
 					itemPerPage : 3
 				},
@@ -85,7 +85,7 @@
 	
 	$(document).on("click", ".detatilBtnClass", function(){
 		alert('안녕하세요')
-		$(this).append('<div style ="width : 600px; height : 200px">하이요하이요</div>')
+		/* $(this).append('<div style ="width : 600px; height : 200px">하이요하이요</div>') */
 	})
 	
 	

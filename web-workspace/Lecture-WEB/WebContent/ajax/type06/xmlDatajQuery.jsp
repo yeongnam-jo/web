@@ -14,7 +14,6 @@
 		sendProcess('get', 'sample.xml', null, callback);
 	}
 	
-
 	function callback() {
 		let msg = '';
 
