@@ -52,7 +52,7 @@ public class FrontControllerServlet extends HttpServlet {
 			}
 			
 			if(callPage != null) {
-				// forward 시키기 위해 필요한 RequestDispatcher 객체  / jsp forward는 <jsp:forward page="user.jsp"/> 형태로 썼다.
+				// forward 시키기 위해 필요한 RequestDispatcher 객체  / jsp forward는 <jsp:forward page="user.jsp"/> 형태로 썼다. (액션 방법)
 				RequestDispatcher dispatcher = request.getRequestDispatcher(callPage);
 				// forward 실행
 				dispatcher.forward(request, response);
@@ -60,6 +60,7 @@ public class FrontControllerServlet extends HttpServlet {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+			//throw new ServletException(e);
 		}
 	}
 }

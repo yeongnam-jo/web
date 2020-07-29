@@ -3,6 +3,8 @@
 	일별 박스오피스, 감독, 배우, 장르 등의 정보를 ajax 통신으로 가져온 뒤 화면의 일부만 수정해보자.
 	
 	조건 : 상세보기 버튼을 눌렀을  때 감독, 배우, 장르 정보가 나타나고, 다시 버튼을 누르면 사라지도록 구현
+	
+	추가조건 : 상세보기 버튼 없이 최초부터 상세보기 가져오기.
 
  --%>
 
@@ -42,7 +44,7 @@
 				
 				/* data	: 'key=--------------------&targetDt='+ searchDate + '&itemPerPage=3', */
 				data 	: { // 파라미터
-					key : '-----------------',
+					key : '--------------------',
 					targetDt : searchDate,
 					itemPerPage : 3
 				},
@@ -104,76 +106,7 @@
 		}
 	}
 	
-	$(document).on('click', '#searchResult button', function(){
-		/* console.log(this)
-		console.log('=================')
-		console.log($(this).attr('id')) */
-		let movieCd = $(this).attr('id');
-		
-		// $('#detail' + movieCd).empty() // 자식태그 삭제. 그러나, 매번 ajax 통신을 하는 것은 똑같다.
-		// console.log($('#detail' + movieCd + ' *').size())
-		
-		// if($('#detail' + movieCd + ' *').length() == 0){ // length() jquery 3.x 버전
-		if($('#detail' + movieCd + ' *').size() == 0){ // 자식태그 없으면 ajax 통신을 하자. size() jquery 1.x 버전
-			$.ajax({
-				url	: 'http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieInfo.json',
-				data : {
-					key : '--------------------',
-					movieCd : movieCd
-				},
-				success : detailMovie // 응답이 완료되고 통신이 성공적으로 이뤄졌을 경우에 실행될 callback function을 준다.
-			});
-		}
-		
-		$('#detail' + movieCd).toggle()
-		
-	})
-	
-	function detailMovie(result){
-		
-		console.log(result)
-		/* let nameList = result.movieInfoResult.movieInfo.actors;
-		let directorList = result.movieInfoResult.movieInfo.directors;
-		let genreList = result.movieInfoResult.movieInfo.genres; */
-		
-		let movieInfo = result.movieInfoResult.movieInfo;
-		
-		let directors = '';
-		movieInfo.directors.forEach(function(data, i){
-			if(i != 0)
-				directors += ', '
-			directors += data.peopleNm;
-		})
-		console.log(directors)
-		
-		let genre = ''
-		movieInfo.genres.forEach(function(data){
-			if(genre != '')
-				genre += ', '
-			genre += data.genreNm;
-		})
-		console.log(genre)
-		
-		let actors = ''
-		movieInfo.actors.forEach(function(data){
-			actors += data.peopleNm + '(' + data.cast + '역)<br>'
-		})
-		console.log(actors)
-		
-		//detailDiv = '#detail' + movieInfo.movieCd;
-		//$(detailDiv).toggle()
-		$('#detail' + movieInfo.movieCd).append('감독: ' + directors + '<br>');
-		$('#detail' + movieInfo.movieCd).append('장르: ' + genre + '<br>');
-		$('#detail' + movieInfo.movieCd).append('배우: ' + actors);
-		
-		/* console.log($(detailDiv + ' *').size())
-		if($(detailDiv + ' *').size() == 0){
-			$('#detail' + movieInfo.movieCd).append('감독: ' + directors + '<br>');
-			$('#detail' + movieInfo.movieCd).append('장르: ' + genre);
-			$('#detail' + movieInfo.movieCd).append('배우: ' + actors + '<br>');
-		} */
-	}
-	
+
 	
 </script>
 </head>
