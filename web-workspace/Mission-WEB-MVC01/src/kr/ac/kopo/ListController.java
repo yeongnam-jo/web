@@ -4,11 +4,12 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.sound.midi.ControllerEventListener;
 
-import kr.ac.kopo.dao.BoardDAO;
-import kr.ac.kopo.vo.BoardVO;
+import kr.ac.kopo.board.dao.BoardDAO;
+import kr.ac.kopo.board.vo.BoardVO;
 
-public class ListController {
+public class ListController implements Controller {
 	public String handleRequest(HttpServletRequest request, HttpServletResponse response)
 								throws Exception {
 		

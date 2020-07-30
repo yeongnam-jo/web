@@ -1,6 +1,6 @@
 <%@page import="java.util.List"%>
-<%@page import="kr.ac.kopo.board.MemberDAO"%>
-<%@page import="kr.ac.kopo.board.MemberVO"%>
+<%@page import="kr.ac.kopo.member.dao.MemberDAO"%>
+<%@page import="kr.ac.kopo.member.vo.MemberVO"%>
 <%@page import="kr.ac.kopo.util.JDBCClose"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>

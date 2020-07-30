@@ -1,4 +1,4 @@
-package kr.ac.kopo.vo;
+package kr.ac.kopo.board.vo;
 
 public class BoardVO {
 	private String title;

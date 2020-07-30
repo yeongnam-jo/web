@@ -1,9 +1,9 @@
-package kr.ac.kopo.dao;
+package kr.ac.kopo.board.dao;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import kr.ac.kopo.vo.BoardVO;
+import kr.ac.kopo.board.vo.BoardVO;
 
 public class BoardDAO {
 
