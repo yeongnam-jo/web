@@ -11,9 +11,16 @@ public class ConnectionFactory {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
-			String url ="jdbc:oracle:thin:@172.16.88.120:1521:dink";
-			String user ="DA09";
-			String password ="DA09";
+			/*
+			 * String url ="jdbc:oracle:thin:@172.16.88.120:1521:dink"; 
+			 * String user ="DA09";
+			 * String password ="DA09";
+			 */
+			
+			String url ="jdbc:oracle:thin:@localhost:1521:xe";
+			String user ="test";
+			String password ="1111";
+
 			
 			conn = DriverManager.getConnection(url, user, password);
 		} catch (Exception e) {
@@ -38,11 +45,13 @@ public class ConnectionFactory {
 	public static void main(String[] args) {
 		//Connection conn = new ConnectionFactory().getConnetion();
 		
+		/*
 		String url ="jdbc:oracle:thin:@172.16.88.120:1521:dink";
 		String user ="DA09";
 		String password ="DA09";
 		Connection conn = new ConnectionFactory().getConnection(url, user, password);
 		
 		System.out.println(conn);
+		*/
 	}
 }

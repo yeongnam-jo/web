@@ -1,4 +1,4 @@
-package kr.ac.kopo.board;
+package kr.ac.kopo.member.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,20 +6,23 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import kr.ac.kopo.member.vo.MemberVO;
 import kr.ac.kopo.util.ConnectionFactory;
 import kr.ac.kopo.util.JDBCClose;
 
 public class MemberDAO {
 	
-	/*
-	 * private String url ="jdbc:oracle:thin:@172.16.88.120:1521:dink"; private
-	 * String user ="DA09"; private String password ="DA09";
-	 */
+//	private String url ="jdbc:oracle:thin:@172.16.88.120:1521:dink";
+//	private String user ="DA09";
+//	private String password ="DA09";
+	
+//	String url ="jdbc:oracle:thin:@192.168.217.57:1521:xe";
+//	String user ="hr";
+//	String password ="hr";
 	
 	private String url ="jdbc:oracle:thin:@localhost:1521:xe";
 	private String user ="test";
 	private String password ="1111";
-
 	
 	public List<MemberVO> selectAllMember() {
 		

@@ -17,9 +17,13 @@ import kr.ac.kopo.util.JDBCClose;
  */
 public class BoardDAO {
 
-	private String url = "jdbc:oracle:thin:@172.16.88.120:1521:dink";
-	private String user = "DA09";
-	private String password = "DA09";
+	/*
+	 * private String url = "jdbc:oracle:thin:@172.16.88.120:1521:dink"; private
+	 * String user = "DA09"; private String password = "DA09";
+	 */
+	private String url ="jdbc:oracle:thin:@localhost:1521:xe";
+	private String user ="test";
+	private String password ="1111";
 
 	/**
 	 * 게시물 번호에 해당 게시물 조회 서비스
