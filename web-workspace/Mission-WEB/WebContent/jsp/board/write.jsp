@@ -1,13 +1,13 @@
 <%@page import="kr.ac.kopo.board.BoardFileVO"%>
 <%@page import="java.io.File"%>
 <%@page import="java.util.Enumeration"%>
-<%@page import="kr.ac.kopo.util.KopoFileNamePolicy"%>
+<%@page import="kr.ac.kopobank.util.KopoFileNamePolicy"%>
 <%@page import="com.oreilly.servlet.MultipartRequest"%>
 <%@page import="kr.ac.kopo.board.BoardVO"%>
 <%@page import="kr.ac.kopo.board.BoardDAO"%>
-<%@page import="kr.ac.kopo.util.JDBCClose"%>
+<%@page import="kr.ac.kopobank.util.JDBCClose"%>
 <%@page import="java.sql.PreparedStatement"%>
-<%@page import="java.sql.Connection"%>
+<%@page import="kr.ac.kopobank.utiltion"%>
 <%@page import="kr.ac.kopo.util.ConnectionFactory"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>

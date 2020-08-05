@@ -1,6 +1,6 @@
-<%@page import="kr.ac.kopo.util.JDBCClose"%>
+<%@page import="kr.ac.kopobank.util.JDBCClose"%>
 <%@page import="java.sql.PreparedStatement"%>
-<%@page import="kr.ac.kopo.util.ConnectionFactory"%>
+<%@page import="kr.ac.kopobank.util.ConnectionFactory"%>
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>

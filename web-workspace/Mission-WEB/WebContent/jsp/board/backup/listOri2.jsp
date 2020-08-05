@@ -2,11 +2,11 @@
 <%@page import="kr.ac.kopo.board.BoardVO"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="kr.ac.kopo.util.JDBCClose"%>
+<%@page import="kr.ac.kopobank.util.JDBCClose"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
-<%@page import="kr.ac.kopo.util.ConnectionFactory"%>
+<%@page import="kr.ac.kopobank.util.ConnectionFactory"%>
 
 <%@ taglib prefix="c" uri ="http://java.sun.com/jsp/jstl/core" %>   
 
