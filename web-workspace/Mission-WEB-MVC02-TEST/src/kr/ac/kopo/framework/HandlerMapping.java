@@ -38,12 +38,17 @@ public class HandlerMapping {
 			Method[] methods = clz.getMethods(); // 해당 객체 내에 있는 모든 메소드를 가져올 수 있다. 부모 클래스의 메소드까지 다 가져옵니다. 메소드 형의 methods 변수를 만든다.
 			for(Method method : methods) { // 모든 메소드로 반복문이 돈다.
 				//System.out.println(method);
-				RequestMapping reqAnno = method.getAnnotation(RequestMapping.class); //requestmapping 어노테이션이 없으면 null이 반환됨. 어노테이션이 있으면 어노테이션의 주소값이 나올 것임(?)
+				RequestMapping reqAnno = method.getAnnotation(RequestMapping.class); //@RequestMapping 어노테이션이 없으면 null이 반환됨. 어노테이션이 있으면 어노테이션의 주소값이 나올 것임(?)
 				
 				// System.out.println("reqAnno : " + reqAnno);
 				
 				if(reqAnno != null) {
-					String uri = reqAnno.value(); // 해당 어노테이션의 value 
+					String uri = reqAnno.value(); // 해당 어노테이션의 값을 가져온다. 
+					// @RequestMapping("list.do"); 라고 돼 있었고, 
+					// 위에서 reqAnno라는 RequestMapping 객체를 가지고 있으므로. 
+					// 객체.value() 하면 최초 @RequestMapping("~~~")이라고 했다면 "~~~" 의 값을 가져오는 것이다.
+					// 그리고 value()라는 메소드는 RequestMapping에서 다른 이름으로도 정할 수 있다. name()으로 정하고, 관련 코드를 그에맞게 정하면 똑같은 결과가 나옴. 
+					
 					//System.out.println("uri : " + uri);
 					CtrlAndMethod cam = new CtrlAndMethod(target, method); // 컨트롤러, 메소드
 					

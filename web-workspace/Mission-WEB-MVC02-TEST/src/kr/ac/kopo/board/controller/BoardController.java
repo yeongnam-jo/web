@@ -14,7 +14,6 @@ import kr.ac.kopo.framework.annotaion.RequestMapping;
  	/board/write.do	: 게시글 등록폼
  		new BoardControoler().write()
  		
- 		
  */
 public class BoardController {
 	
