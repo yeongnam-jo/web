@@ -10,5 +10,5 @@ import java.lang.annotation.Target;
 @Target(METHOD)
 public @interface RequestMapping {
 
-	String value();
+	String value(); // 원래 있는 메소드다. 
 }

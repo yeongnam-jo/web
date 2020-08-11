@@ -18,13 +18,14 @@ import javax.servlet.http.HttpServletResponse;
  */
 
 //web.xml에서 설정했던 매핑 정보(*.do)를 annotation을 활용해서 쉽게만들 수 있다. 
-//서블릿을 생성할 때 설정하면 아래의 형태가 나타남.
+//서블릿을 생성할 때 Url mappings와 Initialization을 설정하면 아래의 형태가 나타남.
 //Url mappings에 설정하면, 아래에 urlPatterns 내에 값이 들어간다.
-//Initializetion parameters에 name과 value를 설정하면, 아래에 initParams 내에 값에 들어간다. 그런데 value는 문자열이므로, |로 구분하여 여러 컨트롤러를 붙인다.
+//Initialization parameters에 name과 value를 설정하면, 아래에 initParams 내에 값에 들어간다. 그런데 value는 문자열이므로, '|'로 구분하여 여러 컨트롤러를 붙인다.
+//	==> HandlerMapping.java에서 split 하여 활용한다.
 @WebServlet(
 		urlPatterns = { "*.do" }, 
 		initParams = { 
-				@WebInitParam(name = "controllers", 
+				@WebInitParam(name = "controllers",  
 							  value = "kr.ac.kopo.board.controller.BoardController"
 							  		+ "|kr.ac.kopo.member.controller.MemberController")
 		})
@@ -42,10 +43,10 @@ public class DispatcherServlet extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		// web.xml 내의 설정값에 접근할 수 있는 변수가 config이다.
 		// web.xml과 같은 역할을 하는 @WebServlet() 내에 있는 initParams에 접근할 수 있다.
-		String ctrlNames = config.getInitParameter("controllers");
+		String ctrlNames = config.getInitParameter("controllers"); //ctrlNames : 컨트롤러 이름. '|'로 이어붙어져 있는 문자열이다.
 		System.out.println("ctrlNames : " + ctrlNames);
 		try {
-			mappings = new HandlerMapping(ctrlNames);
+			mappings = new HandlerMapping(ctrlNames); //핸들러매핑 객체를 생성하자. 컨트롤러 이름을 인자로 넘기면, 저기서 알아서 만들어 준다.
 		} catch (Exception e) {
 			throw new ServletException(e);
 		}
@@ -71,11 +72,11 @@ public class DispatcherServlet extends HttpServlet {
 				throw new Exception("요청 URL은 존재하지 않습니다.");
 			}
 			
-			Object target = cam.getTarget();
-			Method method = cam.getMethod();
+			Object target = cam.getTarget(); // 클래스
+			Method method = cam.getMethod(); // 메소드
 			
-			String view = (String) method.invoke(target, request, response);
-			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+			String view = (String) method.invoke(target, request, response); // 메소드를 실행하는 메소드 : invoke(매개변수 3개가 온다). jsp 경로를 view에 저장
+			RequestDispatcher dispatcher = request.getRequestDispatcher(view); // forward 절차.
 			dispatcher.forward(request, response);
 			
 		} catch(Exception e) {
