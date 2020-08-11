@@ -14,3 +14,6 @@ public @interface RequestMapping { //@RequestMapping 어노테이션에 관한 �
 	// String name(); ==> 이름은 정하기 나름이다.
 	
 }
+
+//@RequestMapping("문자열이");
+
