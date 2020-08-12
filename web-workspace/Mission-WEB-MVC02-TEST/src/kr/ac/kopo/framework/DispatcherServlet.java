@@ -3,6 +3,8 @@ package kr.ac.kopo.framework;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Method;
+import java.util.Map;
+import java.util.Set;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
@@ -40,7 +42,7 @@ public class DispatcherServlet extends HttpServlet {
 	/**
 	 * @see Servlet#init(ServletConfig)
 	 */
-	public void init(ServletConfig config) throws ServletException {
+	public void init(ServletConfig config) throws ServletException { //ServletConfig라는 객체는 서블릿당 하나만 생성된다. 이를 통해 어떤 설정을 할 수 있음.
 		// web.xml 내의 설정값에 접근할 수 있는 변수가 config이다.
 		// web.xml과 같은 역할을 하는 @WebServlet() 내에 있는 initParams에 접근할 수 있다.
 		String ctrlNames = config.getInitParameter("controllers"); //ctrlNames : 컨트롤러 이름. '|'로 이어붙어져 있는 문자열이다.
@@ -75,9 +77,37 @@ public class DispatcherServlet extends HttpServlet {
 			Object target = cam.getTarget(); // 클래스
 			Method method = cam.getMethod(); // 메소드
 			
-			String view = (String) method.invoke(target, request, response); // 메소드를 실행하는 메소드 : invoke(매개변수 3개가 온다). jsp 경로를 view에 저장
-			RequestDispatcher dispatcher = request.getRequestDispatcher(view); // forward 절차.
-			dispatcher.forward(request, response);
+			ModelAndView mav = (ModelAndView) method.invoke(target, request, response); 
+			
+			//String view = (String) method.invoke(target, request, response); 
+			// 메소드를 실행하는 메소드 : invoke(해매개변수 3개가 온다). jsp 경로를 view에 저장
+			// 각 컨트롤러의 메소드는 request, response를 인자로 사용하고 jsp 경로를 return 하기 때문에 위와같은 형태가 된다.
+			
+			String view = mav.getView();
+			
+			// request 공유영역에 객체 등록
+			Map<String, Object> model = mav.getModel();
+			// 여러개의 객체를 등록할 수 있으므로 for 반복문을 돈다. 이전에는 request.setAttribute("boardList", list) 등으로 
+			// 각 컨트롤러에서 하나만 등록했었는데, 여러개 등록하는 일이 생기나보다.
+			// 그리고, 객체를 Object 타입으로 한 이유는, 모든 클래스는 Object를 상속받기 때문인가보다. 
+			// String도 Object로 받을 수 있으니까? 이렇게 한 듯!
+			Set<String> keys = model.keySet(); // 맵의 key를 모두 뽑아내는 메소드 : keySet()
+			for(String key : keys) {
+				Object value = model.get(key);
+				request.setAttribute(key, value);
+			}
+			
+			// 응답(sendRedirect or forward)
+			if(view.startsWith("redirect:")) { 
+				// redirect 하는 이유는 : 굳이 jsp를 거치지 않고 바로 servlet이 응답해야 하는 경우
+				// 이 경우에는 비밀번호 틀렸을 때 다른 jsp 로보내지 않고, alert창 띄우고 바로 login 서블릿으로 보내기 위해서다.
+				view = view.substring("redirect:".length());
+				response.sendRedirect(request.getContextPath() + view);
+			} else {
+				RequestDispatcher dispatcher = request.getRequestDispatcher(view); // forward 절차.
+				dispatcher.forward(request, response);
+			}
+			
 			
 		} catch(Exception e) {
 			response.setContentType("text/plain; charset=utf-8"); 
